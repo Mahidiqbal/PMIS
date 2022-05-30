@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>PMIS</h1>
-        <p class="lead">PMIS System for all user.</p>
+        <h1>PNCA</h1>
+        <p class="lead">Welcome to PNCA Home Page.</p>
     </div>
 
     <div class="row">
