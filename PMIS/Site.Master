@@ -47,14 +47,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server">PNCA</a>
+                    <a class="navbar-brand" runat="server" href="~/Pages/Home.aspx">Welcome to PNCA</a>
                     <%--<asp:LinkButton ID="btnPMIS" class="navbar-brand" runat="server" href="Default.aspx">PMIS</asp:LinkButton>--%>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><asp:LinkButton ID="btnHome" runat="server" href="Default.aspx">Home</asp:LinkButton></li>
-                        <li><a runat="server" href="Personal_Info.aspx">Personal Information</a></li>
-                        <li><a runat="server" href="~/Pages\Family_Info">Family Information</a></li>
+                        <li><a ID="btnHome" runat="server" href="~/Pages\Dashboard">Dashboard</a></li>
+                        <%--<li><a runat="server" href="~/Pages\Personal_Info.aspx">Personal Information</a></li>
+                        <li><a runat="server" href="~/Pages\Family_Info">Family Information</a></li>--%>
                         <%--<li>
                             <a runat="server" class="dropdown-toggle" href="~/Pages\Family_Info" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Family Information <span class="caret"></span>
@@ -65,7 +65,7 @@
                                 <li><a runat="server" href="~/Pages\Sanction">Independent</a></li>
                             </ul>
                         </li>--%>
-                        <li><a runat="server" href="~/Pages\Sanction">Sanction</a></li>
+                        <%--<li><a runat="server" href="~/Pages\Sanction">Sanction</a></li>
                         <li><a runat="server" href="~/Pages\Promotion">Promotion</a></li>
                         <li><a runat="server" href="~/Pages\Pension">Pension</a></li>
                         <li><a runat="server" href="~/Pages\Application_Form">Application Form</a></li>
@@ -79,15 +79,9 @@
                                 <li><a runat="server" href="~/Pages\Application">Application</a></li>
                                 <li><a runat="server" href="~/Pages\Personal_Formalities">Pension Formalities</a></li>
                             </ul>
-                        </li>
+                        </li> --%>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
-                        <li>
-                            <asp:LinkButton ID="btnRole" runat="server">Role</asp:LinkButton>
-                        </li>
-                        <li>
-                            <asp:LinkButton ID="btnUserName" runat="server">User</asp:LinkButton>
-                        </li>
                         <li >
                             <a href="login.aspx">  
                                 <span class="glyphicon glyphicon-log-out"></span>  
@@ -98,16 +92,17 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+       
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                 <div class="container body-content" style="background-color:black;">
+                     </div>
             </asp:ContentPlaceHolder>
-            <hr />
 <%--            <<%--footer>
                 <center>
                     <p>&copy; <%: DateTime.Now.Year %> Copyright : Engineer 1.0</p>
                 </center>
             </footer>--%>
-        </div>
+        
 
     </form>
 </body>

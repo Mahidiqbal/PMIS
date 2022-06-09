@@ -11,24 +11,7 @@ namespace PMIS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                if(Session["Role"].Equals("Admin"))
-                {
-                    btnUserName.Text = "Hello " + Session["Name"].ToString();
-                    btnRole.Text = Session["Role"].ToString();
-                }
-                else if(Session["Role"].Equals("User"))
-                {
-                    btnHome.Visible = false;
-                    btnUserName.Text = "Hello " + Session["Name"].ToString();
-                    btnRole.Text = Session["Role"].ToString();
-                }
-            }
-            catch
-            {
-
-            }
+            
         }
 
 

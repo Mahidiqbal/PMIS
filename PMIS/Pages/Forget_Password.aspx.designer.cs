@@ -7,29 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMIS
+namespace PMIS.Pages
 {
 
 
-    public partial class SiteMaster
+    public partial class Forget_Password
     {
 
         /// <summary>
-        /// btnHome control.
+        /// txtForgetEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnHome;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtForgetEmail;
 
         /// <summary>
-        /// MainContent control.
+        /// BtnSend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button BtnSend;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

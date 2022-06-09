@@ -33,22 +33,22 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtlName;
 
         /// <summary>
-        /// ddUserRole control.
+        /// txtPno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect ddUserRole;
+        protected global::System.Web.UI.WebControls.TextBox txtPno;
 
         /// <summary>
-        /// txtUserDOB control.
+        /// txtDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserDOB;
+        protected global::System.Web.UI.WebControls.TextBox txtDOB;
 
         /// <summary>
         /// txtEmail control.
@@ -69,6 +69,33 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtPass;
 
         /// <summary>
+        /// txtCNIC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCNIC;
+
+        /// <summary>
+        /// ddMariStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddMariStatus;
+
+        /// <summary>
+        /// ddGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddGender;
+
+        /// <summary>
         /// txtPhone control.
         /// </summary>
         /// <remarks>
@@ -78,22 +105,13 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
-        /// txtCity control.
+        /// txtStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCity;
-
-        /// <summary>
-        /// ddGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect ddGender;
+        protected global::System.Web.UI.WebControls.TextBox txtStatus;
 
         /// <summary>
         /// txtAddress control.
@@ -105,12 +123,30 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
         /// <summary>
-        /// BtnSignUp control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSignUp;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+
+        /// <summary>
+        /// lblMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }

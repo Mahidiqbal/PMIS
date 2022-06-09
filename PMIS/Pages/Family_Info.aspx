@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Family Information" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Family_Info.aspx.cs" Inherits="PMIS.Pages.Family_Info" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
+        <div class="container-fluid">
         <center>
           <h2><%: Title %>.</h2>
         </center>
@@ -243,6 +244,7 @@
                       <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="btn btn-danger" Width="110px"  />
                   </div>
               </div>
+            </div>
       </div>
     <asp:Label ID="lblMsg" ForeColor="Green" runat="server" Text=""></asp:Label>
 </asp:Content>

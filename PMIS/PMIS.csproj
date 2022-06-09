@@ -105,14 +105,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\stylesheet.css" />
+    <Content Include="Pages\Home.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -125,17 +125,30 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Login.aspx" />
-    <Content Include="Pages\Application_Form.aspx" />
-    <Content Include="Pages\Family_NOK_Info.aspx" />
+    <Content Include="Pages\Active_Service.aspx" />
+    <Content Include="Pages\Dashboard.aspx" />
+    <Content Include="Pages\Length_Of_Service.aspx" />
     <Content Include="Pages\Family_Info.aspx" />
-    <Content Include="Pages\Application.aspx" />
-    <Content Include="Pages\Pension.aspx" />
-    <Content Include="Personal_Info.aspx" />
-    <Content Include="Pages\Promotion.aspx" />
-    <Content Include="Pages\Reports.aspx" />
+    <Content Include="Pages\UpCountry.aspx" />
+    <Content Include="Pages\Forget_Password.aspx" />
+    <Content Include="Pages\Edozzier.aspx" />
+    <Content Include="Pages\SignUp.aspx" />
+    <Content Include="Pages\WebForm1.aspx" />
+    <Content Include="Pages\Personal_Info.aspx" />
+    <Content Include="Pages\TodRoster.aspx" />
+    <Content Include="Pages\RequestWelfare.aspx" />
     <Content Include="Pages\Sanction.aspx" />
-    <Content Include="Pages\Personal_Formalities.aspx" />
+    <Content Include="Pages\SodRoster.aspx" />
+    <Content Include="Pages\SignIn.aspx" />
+    <Content Include="Resources\4.jpg" />
+    <Content Include="Resources\3.jpg" />
+    <Content Include="Resources\2.jpg" />
+    <Content Include="Resources\1.jpg" />
+    <Content Include="Resources\BGImage.jpg" />
+    <Content Include="Resources\Panel.png" />
+    <Content Include="Resources\penalty-card.png" />
+    <Content Include="Resources\Transparent Panel 2.png" />
+    <Content Include="Resources\Transparent Panel 3.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -164,7 +177,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="SignUp.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -173,52 +185,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Pages\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Pages\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Model\DB_Conn.cs" />
-    <Compile Include="Pages\Application_Form.aspx.cs">
-      <DependentUpon>Application_Form.aspx</DependentUpon>
+    <Compile Include="Pages\Active_Service.aspx.cs">
+      <DependentUpon>Active_Service.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Application_Form.aspx.designer.cs">
-      <DependentUpon>Application_Form.aspx</DependentUpon>
+    <Compile Include="Pages\Active_Service.aspx.designer.cs">
+      <DependentUpon>Active_Service.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Family_NOK_Info.aspx.cs">
-      <DependentUpon>Family_NOK_Info.aspx</DependentUpon>
+    <Compile Include="Pages\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Family_NOK_Info.aspx.designer.cs">
-      <DependentUpon>Family_NOK_Info.aspx</DependentUpon>
+    <Compile Include="Pages\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Length_Of_Service.aspx.cs">
+      <DependentUpon>Length_Of_Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Length_Of_Service.aspx.designer.cs">
+      <DependentUpon>Length_Of_Service.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Family_Info.aspx.cs">
       <DependentUpon>Family_Info.aspx</DependentUpon>
@@ -227,40 +225,61 @@
     <Compile Include="Pages\Family_Info.aspx.designer.cs">
       <DependentUpon>Family_Info.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Application.aspx.cs">
-      <DependentUpon>Application.aspx</DependentUpon>
+    <Compile Include="Pages\UpCountry.aspx.cs">
+      <DependentUpon>UpCountry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Application.aspx.designer.cs">
-      <DependentUpon>Application.aspx</DependentUpon>
+    <Compile Include="Pages\UpCountry.aspx.designer.cs">
+      <DependentUpon>UpCountry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Pension.aspx.cs">
-      <DependentUpon>Pension.aspx</DependentUpon>
+    <Compile Include="Pages\Forget_Password.aspx.cs">
+      <DependentUpon>Forget_Password.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Pension.aspx.designer.cs">
-      <DependentUpon>Pension.aspx</DependentUpon>
+    <Compile Include="Pages\Forget_Password.aspx.designer.cs">
+      <DependentUpon>Forget_Password.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Personal_Info.aspx.cs">
+    <Compile Include="Pages\Edozzier.aspx.cs">
+      <DependentUpon>Edozzier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edozzier.aspx.designer.cs">
+      <DependentUpon>Edozzier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Personal_Info.aspx.cs">
       <DependentUpon>Personal_Info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Personal_Info.aspx.designer.cs">
+    <Compile Include="Pages\Personal_Info.aspx.designer.cs">
       <DependentUpon>Personal_Info.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Promotion.aspx.cs">
-      <DependentUpon>Promotion.aspx</DependentUpon>
+    <Compile Include="Pages\TodRoster.aspx.cs">
+      <DependentUpon>TodRoster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Promotion.aspx.designer.cs">
-      <DependentUpon>Promotion.aspx</DependentUpon>
+    <Compile Include="Pages\TodRoster.aspx.designer.cs">
+      <DependentUpon>TodRoster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Reports.aspx.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
+    <Compile Include="Pages\RequestWelfare.aspx.cs">
+      <DependentUpon>RequestWelfare.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Reports.aspx.designer.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
+    <Compile Include="Pages\RequestWelfare.aspx.designer.cs">
+      <DependentUpon>RequestWelfare.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sanction.aspx.cs">
       <DependentUpon>Sanction.aspx</DependentUpon>
@@ -269,21 +288,21 @@
     <Compile Include="Pages\Sanction.aspx.designer.cs">
       <DependentUpon>Sanction.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Personal_Formalities.aspx.cs">
-      <DependentUpon>Personal_Formalities.aspx</DependentUpon>
+    <Compile Include="Pages\SodRoster.aspx.cs">
+      <DependentUpon>SodRoster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Personal_Formalities.aspx.designer.cs">
-      <DependentUpon>Personal_Formalities.aspx</DependentUpon>
+    <Compile Include="Pages\SodRoster.aspx.designer.cs">
+      <DependentUpon>SodRoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUp.aspx.cs">
-      <DependentUpon>SignUp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SignUp.aspx.designer.cs">
-      <DependentUpon>SignUp.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

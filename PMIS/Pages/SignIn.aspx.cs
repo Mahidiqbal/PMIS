@@ -2,23 +2,23 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PMIS
+namespace PMIS.Pages
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
         string query;
         DB_Conn con = new DB_Conn();
         DataSet ds = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
         protected void BtnSignIn_Click(object sender, EventArgs e)
         {
             try
@@ -27,15 +27,15 @@ namespace PMIS
                 ds = con.getData(query);
                 if (ds.Tables[0].Rows.Count == 0)
                 {
-                    if (txtEmail.Value == "root" && txtPass.Value == "root")
+                    if (txtEmail.Value == "root" && txtPsw.Value == "root")
                     {
-                        Response.Redirect("Default.aspx");
+                        Response.Redirect("Home.aspx");
                     }
                 }
                 else
                 {
-                    query = "SELECT User_ID,User_Role,User_firstName FROM tbl_User WHERE User_Email='" + txtEmail.Value + "' AND User_Password='" + txtPass.Value + "'";
-                      ds = con.getData(query);
+                    query = "SELECT User_ID,User_Role,User_firstName FROM tbl_User WHERE User_Email='" + txtEmail.Value + "' AND User_Password='" + txtPsw.Value + "'";
+                    ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         string role = ds.Tables[0].Rows[0][1].ToString();
@@ -44,7 +44,7 @@ namespace PMIS
                         Session["ID"] = ds.Tables[0].Rows[0][0].ToString();
                         if (role == "Admin")
                         {
-                            Response.Redirect("Default.aspx");
+                            Response.Redirect("Home.aspx");
                             return;
                         }
                         else if (role == "User")
@@ -55,13 +55,27 @@ namespace PMIS
                     }
                     else
                     {
-                        lblErrorMessage.Text = "Wrong! Username Or Password";
+                        lblMessage.ForeColor = Color.Red;
+                        lblMessage.Text = "Wrong! Username Or Password";
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Text = ex.Message;
+            }
+        }
+
+        protected void BtnSignUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect("SignUp.aspx");
+            }
             catch(Exception ex)
             {
-                lblErrorMessage.Text = ex.Message;
+                lblMessage.Text = ex.Message;
             }
         }
     }

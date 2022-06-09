@@ -11,7 +11,7 @@ namespace PMIS.Pages
 {
 
 
-    public partial class Personal_Info
+    public partial class SignUp
     {
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtfName;
 
         /// <summary>
         /// txtlName control.
@@ -30,25 +30,16 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtlName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtlName;
 
         /// <summary>
-        /// txtPno control.
+        /// ddUserRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPno;
-
-        /// <summary>
-        /// txtDOB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDOB;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddUserRole;
 
         /// <summary>
         /// txtEmail control.
@@ -57,43 +48,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
-        /// <summary>
-        /// txtPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
-
-        /// <summary>
-        /// txtCNIC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCNIC;
-
-        /// <summary>
-        /// ddMariStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddMariStatus;
-
-        /// <summary>
-        /// ddGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddGender;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
 
         /// <summary>
         /// txtPhone control.
@@ -102,16 +57,61 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhone;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtPhone;
 
         /// <summary>
-        /// txtStatus control.
+        /// txtCNIC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStatus;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCNIC;
+
+        /// <summary>
+        /// txtUserDOB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUserDOB;
+
+        /// <summary>
+        /// txtPno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPno;
+
+        /// <summary>
+        /// txtPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPass;
+
+        /// <summary>
+        /// ddGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddGender;
+
+        /// <summary>
+        /// ddMariStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddMariStatus;
 
         /// <summary>
         /// txtAddress control.
@@ -120,33 +120,24 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddress;
 
         /// <summary>
-        /// btnEdit control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// btnCancel control.
+        /// BtnSignUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
-
-        /// <summary>
-        /// lblMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.WebControls.Button BtnSignUp;
     }
 }
