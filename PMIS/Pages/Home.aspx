@@ -124,10 +124,10 @@
 
                                     <asp:TemplateField HeaderText="Address" InsertVisible="False">
                                         <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("User_Address") %>' runat="server"></asp:Label>
+                                            <asp:Label Text='<%# Eval("PresentAddress") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtAddress" Text='<%# Eval("User_Address") %>' runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtAddress" Text='<%# Eval("PresentAddress") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
 
@@ -149,12 +149,12 @@
 
                                     <asp:TemplateField HeaderText="Edit">
                                         <ItemTemplate>
-                                            <asp:Button runat="server" CommandName="Edit" ToolTip="Edit" ForeColor="White" CssClass="btn btn-success" Text="Edit" CommandArgument='<%# Eval("User_ID") %>' />
+                                            <asp:Button runat="server" CommandName="Edit" Visible="false" ToolTip="Edit" ForeColor="White" CssClass="btn btn-success" Text="Edit" CommandArgument='<%# Eval("User_ID") %>' />
                                             <asp:Button runat="server" CommandName="Delete" ToolTip="Delete" ForeColor="White" CssClass="btn btn-danger" Text="Delete" CommandArgument='<%# Eval("User_ID") %>' />
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:Button runat="server" CommandName="Update" ToolTip="Update" CommandArgument='<%# Eval("User_ID") %>' ForeColor="White" CssClass="btn btn-success" Text="Update" />
-                                            <asp:Button runat="server" CommandName="Cancel" ToolTip="Cancel" CommandArgument='<%# Eval("User_ID") %>' ForeColor="White" CssClass="btn btn-danger" Text="Cancel" />
+                                            <asp:Button runat="server" CommandName="Update" Visible="false" ToolTip="Update" CommandArgument='<%# Eval("User_ID") %>' ForeColor="White" CssClass="btn btn-success" Text="Update" />
+                                            <asp:Button runat="server" CommandName="Cancel" Visible="false" ToolTip="Cancel" CommandArgument='<%# Eval("User_ID") %>' ForeColor="White" CssClass="btn btn-danger" Text="Cancel" />
                                         </EditItemTemplate>
                                         <ItemStyle HorizontalAlign="Justify" />
                                     </asp:TemplateField>

@@ -100,11 +100,13 @@
             <div class="row">
                 <div class="column">
                     <label for="txtfName"><b>First Name</b></label>
-                    <input id="txtfName" type="text" placeholder="Enter First Name" runat="server" required />
+                    <asp:TextBox ID="txtfName" type="text" placeholder="Enter First Name" runat="server" required></asp:TextBox>
+                    <%--<input id="txtfName" type="text" placeholder="Enter First Name" runat="server" required />--%>
                 </div>
                 <div class="column">
                     <label for="txtlName"><b>Last Name</b></label>
-                    <input id="txtlName" type="text" placeholder="Enter Last Name" runat="server" required />
+                    <asp:TextBox ID="txtlName" type="text" placeholder="Enter Last Name" runat="server" required></asp:TextBox>
+                    <%--<input id="txtlName" type="text" placeholder="Enter Last Name" runat="server" required />--%>
                 </div>
                 <div class="column">
                     <label for="floatingSelect" style="font-size: medium"><b>Role</b></label>
@@ -118,15 +120,18 @@
             <div class="row">
                 <div class="column">
                     <label for="txtEmail"><b>Email</b></label>
-                    <input id="txtEmail" type="email" placeholder="Enter Email" name="txtEmail" runat="server" required />
+                    <asp:TextBox id="txtEmail" type="email" placeholder="Enter Email" runat="server" required></asp:TextBox>
+                    <%--<input id="txtEmail" type="email" placeholder="Enter Email" name="txtEmail" runat="server" required />--%>
                 </div>
                 <div class="column">
                     <label for="txtPhone"><b>Phone No</b></label>
-                    <input id="txtPhone" type="tel" placeholder="Enter Phone No" name="txtPhone" runat="server" required />
+                     <asp:TextBox id="txtPhone" type="tel" placeholder="Enter Phone No" runat="server" required></asp:TextBox>
+                    <%--<input id="txtPhone" type="tel" placeholder="Enter Phone No" name="txtPhone" runat="server" required />--%>
                 </div>
                 <div class="column">
                     <label for="txtCnic"><b>CNIC No</b></label>
-                    <input id="txtCNIC" type="text" placeholder="Enter CNIC No" name="txtCnic" runat="server" required />
+                    <asp:TextBox id="txtCNIC" type="text" placeholder="Enter CNIC No" runat="server" required></asp:TextBox>
+                    <%--<input id="txtCNIC" type="text" placeholder="Enter CNIC No" name="txtCnic" runat="server" required />--%>
                 </div>
             </div>
             <div class="row">
@@ -136,11 +141,13 @@
                 </div>
                 <div class="column">
                     <label for="txtPNO"><b>P.NO / O.NO</b></label>
-                    <input id="txtPno" type="text" placeholder="Enter P.No " name="txtPNO" runat="server" required />
+                    <asp:TextBox id="txtPno" type="text" placeholder="Enter P.No " runat="server" required></asp:TextBox>
+                    <%--<input id="txtPno" type="text" placeholder="Enter P.No " name="txtPNO" runat="server" required />--%>
                 </div>
                 <div class="column">
                     <label for="txtPsw"><b>Password</b></label>
-                    <input id="txtPass" type="password" placeholder="Enter Password" name="txtPsw" runat="server" required />
+                    <asp:TextBox id="txtPass" type="password" placeholder="Enter Password" runat="server" required></asp:TextBox>
+                    <%--<input id="txtPass" type="password" placeholder="Enter Password" name="txtPsw" runat="server" required />--%>
                 </div>
             </div>
             <div class="row">
@@ -164,7 +171,8 @@
                 </div>
                 <div class="column">
                     <label for="txtAddress"><b>Address</b></label>
-                    <input id="txtAddress" type="text" placeholder="Street #1,DHA Phase 3" name="txtAddress" runat="server" required />
+                    <asp:TextBox id="txtAddress" type="text" placeholder="Street #1,DHA Phase 3" runat="server" required></asp:TextBox>
+                    <%--<input id="txtAddress" type="text" placeholder="Street #1,DHA Phase 3" name="txtAddress" runat="server" required />--%>
                 </div>
             </div>
             <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>

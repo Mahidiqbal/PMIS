@@ -21,7 +21,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtfName;
+        protected global::System.Web.UI.WebControls.TextBox txtfName;
 
         /// <summary>
         /// txtlName control.
@@ -30,7 +30,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtlName;
+        protected global::System.Web.UI.WebControls.TextBox txtlName;
 
         /// <summary>
         /// ddUserRole control.
@@ -48,7 +48,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// txtPhone control.
@@ -57,7 +57,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtPhone;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
         /// txtCNIC control.
@@ -66,7 +66,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCNIC;
+        protected global::System.Web.UI.WebControls.TextBox txtCNIC;
 
         /// <summary>
         /// txtUserDOB control.
@@ -84,7 +84,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPno;
+        protected global::System.Web.UI.WebControls.TextBox txtPno;
 
         /// <summary>
         /// txtPass control.
@@ -93,7 +93,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPass;
+        protected global::System.Web.UI.WebControls.TextBox txtPass;
 
         /// <summary>
         /// ddGender control.
@@ -120,7 +120,7 @@ namespace PMIS.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
         /// <summary>
         /// lblMessage control.

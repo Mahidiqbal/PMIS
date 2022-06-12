@@ -34,7 +34,7 @@ namespace PMIS.Pages
                 }
                 else
                 {
-                    query = "SELECT User_ID,User_Role,User_firstName FROM tbl_User WHERE User_Email='" + txtEmail.Value + "' AND User_Password='" + txtPsw.Value + "'";
+                    query = "SELECT User_ID,User_Role,User_firstName,User_Pno FROM tbl_User WHERE User_Email='" + txtEmail.Value + "' AND User_Password='" + txtPsw.Value + "'";
                     ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
@@ -42,6 +42,7 @@ namespace PMIS.Pages
                         Session["Role"] = ds.Tables[0].Rows[0][1].ToString();
                         Session["Name"] = ds.Tables[0].Rows[0][2].ToString();
                         Session["ID"] = ds.Tables[0].Rows[0][0].ToString();
+                        Session["User_Pno"] = ds.Tables[0].Rows[0][3].ToString();
                         if (role == "Admin")
                         {
                             Response.Redirect("Home.aspx");
@@ -49,7 +50,7 @@ namespace PMIS.Pages
                         }
                         else if (role == "User")
                         {
-                            Response.Redirect("Personal_Info.aspx");
+                            Response.Redirect("Dashboard.aspx");
                             return;
                         }
                     }

@@ -196,10 +196,10 @@
                     <asp:Button type="submit" runat="server" class="btn" Text="E-DOZZIER" onclick="BtnEdozzier_Click"/>
                 </div>
                 <div class="col-sm-3">
-                    <asp:Button type="submit" runat="server" class="btn" Text="TOD ROSTER" onclick="BtnTodRoster_Click"/>
+                    <asp:Button ID="btnTOD" type="submit" runat="server" class="btn" Text="TOD ROSTER" onclick="BtnTodRoster_Click"/>
                 </div>
                 <div class="col-sm-3">
-                    <asp:Button type="submit" runat="server" class="btn" Text="SOD ROSTER" onclick="BtnSodRoster_Click"/>
+                    <asp:Button ID="btnSOD" type="submit" runat="server" class="btn" Text="SOD ROSTER" onclick="BtnSodRoster_Click"/>
                 </div>
                 <div class="col-sm-3">
                     <asp:Button type="submit" runat="server" class="btn" Text="REQUEST & WELFARE" onclick="BtnRequestWelfare_Click"/>

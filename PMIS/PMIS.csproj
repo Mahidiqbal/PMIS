@@ -129,11 +129,12 @@
     <Content Include="Pages\Dashboard.aspx" />
     <Content Include="Pages\Length_Of_Service.aspx" />
     <Content Include="Pages\Family_Info.aspx" />
+    <Content Include="Pages\Qualification.aspx" />
+    <Content Include="Pages\Transfer_Record.aspx" />
     <Content Include="Pages\UpCountry.aspx" />
     <Content Include="Pages\Forget_Password.aspx" />
     <Content Include="Pages\Edozzier.aspx" />
     <Content Include="Pages\SignUp.aspx" />
-    <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Pages\Personal_Info.aspx" />
     <Content Include="Pages\TodRoster.aspx" />
     <Content Include="Pages\RequestWelfare.aspx" />
@@ -225,6 +226,20 @@
     <Compile Include="Pages\Family_Info.aspx.designer.cs">
       <DependentUpon>Family_Info.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Qualification.aspx.cs">
+      <DependentUpon>Qualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Qualification.aspx.designer.cs">
+      <DependentUpon>Qualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transfer_Record.aspx.cs">
+      <DependentUpon>Transfer_Record.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Transfer_Record.aspx.designer.cs">
+      <DependentUpon>Transfer_Record.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UpCountry.aspx.cs">
       <DependentUpon>UpCountry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,13 +267,6 @@
     </Compile>
     <Compile Include="Pages\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Personal_Info.aspx.cs">
       <DependentUpon>Personal_Info.aspx</DependentUpon>

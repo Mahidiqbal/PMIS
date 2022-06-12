@@ -11,9 +11,16 @@ namespace PMIS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack)
+            {
+                btnHome.InnerText = "Dashboard";
+                if (Session["Role"].ToString() == "User")
+                {
+                    btnPMIS.Visible=false;
+                    btnHome.InnerText = "PNCA Dashboard";
+                    return;
+                }
+            }
         }
-
-
     }
 }

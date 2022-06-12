@@ -11,10 +11,15 @@ namespace PMIS.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(!IsPostBack)
             {
-
+                if (Session["Role"].ToString() == "User")
+                {
+                    btnSOD.Visible = false;
+                    btnTOD.Visible = false;
+                }
             }
+          
         }
 
         protected void BtnSanction_Click(object sender, EventArgs e)
