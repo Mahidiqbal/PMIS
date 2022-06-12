@@ -17,6 +17,7 @@ namespace PMIS
                 if (Session["Role"].ToString() == "User")
                 {
                     btnPMIS.Visible=false;
+                    btnRequest.Visible = false;
                     btnHome.InnerText = "PNCA Dashboard";
                     return;
                 }

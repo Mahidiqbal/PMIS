@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,114 +19,172 @@ namespace PMIS.Pages
         {
             if(!IsPostBack)
             {
-                btnEdit.Visible = false;
-                btnCancel.Visible = false;
-                loadData();
+                loadData1();
                 lblMsg.Text = "";
             }
         }
         public string status;
+
+        protected void loadData1()
+        {
+            try
+            {
+                if (Session["Role"].ToString() == "Admin")
+                {
+                    btnEdit.Visible = false;
+                    btnCancel.Visible = false;
+
+                    query = "select * from tbl_User where User_Pno = '" + Session["Pno"].ToString() + "'";
+                    ds = con.getData(query);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
+                        txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                        txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+                        txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
+                        ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
+                        txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                    }
+                    else
+                    {
+                        lblMsg.ForeColor = Color.Red;
+                        lblMsg.Text = "Data Not Found";
+                    }
+                }
+                else if (Session["Role"].ToString() == "User")
+                {
+                    query = "select * from tbl_User where User_ID = '" + Session["ID"].ToString() + "' and Status='Approved'";
+                    DataSet ds = con.getData(query);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
+                        txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                        txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+                        txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
+                        ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
+                        txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                    }
+                }
+            }
+            catch { }
+        }
         protected void loadData()
         {
-            if (Session["Pno"].ToString() != null)
+            if (Session["Role"].ToString() == "Admin")
             {
-                
-                query = "select User_Status from tbl_User_Update where  User_Pno = '" + Session["Pno"].ToString() + "'";
-                ds = con.getData(query);
-                if (ds.Tables[0].Rows.Count > 0)
+                btnEdit.Visible = false;
+                btnCancel.Visible = false;
+                if (Session["Pno"].ToString() != null)
                 {
-                    status = ds.Tables[0].Rows[0][0].ToString();
-                }
-                if (status == "Pending" || status == null)
-                {
-                    query = "SELECT * FROM tbl_User WHERE User_Pno = '" + Session["Pno"].ToString() + "'";
-                    ds = con.getData(query);
 
-                    txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
-                    txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
-                    txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
-                    txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-                    txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
-                    txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
-                    txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
-                    txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
-                    ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
-                    txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
-                    ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
-                    txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
-                }
-                else if (status == "Approved")
-                {
-                    query = "SELECT * FROM tbl_User_Update WHERE User_ID = '" + Session["ID"].ToString() + "'";
+                    query = "select User_Status from tbl_User_Update where  User_Pno = '" + Session["Pno"].ToString() + "'";
                     ds = con.getData(query);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        status = ds.Tables[0].Rows[0][0].ToString();
+                    }
+                    if (status == "Pending" || status == null)
+                    {
+                        query = "SELECT * FROM tbl_User WHERE User_Pno = '" + Session["Pno"].ToString() + "'";
+                        ds = con.getData(query);
 
-                    txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
-                    txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
-                    txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
-                    txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-                    txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
-                    txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
-                    txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
-                    txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
-                    ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
-                    txtMedCategory.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
-                    txtEnrollDate.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
-                    txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
-                    txtPermanentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
-                    ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
-                    txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                        txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
+                        txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                        txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+                        txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
+                        ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
+                        txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                    }
+                    else if (status == "Approved")
+                    {
+                        query = "SELECT * FROM tbl_User_Update WHERE User_ID = '" + Session["ID"].ToString() + "'";
+                        ds = con.getData(query);
+
+                        txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
+                        txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                        txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+                        txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
+                        ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtMedCategory.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
+                        txtEnrollDate.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
+                        txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        txtPermanentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
+                        ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
+                        txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                    }
+                }
+                else
+                {
+                    query = "select User_Status from tbl_User_Update where  User_ID = '" + Session["ID"].ToString() + "'";
+                    ds = con.getData(query);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        status = ds.Tables[0].Rows[0][0].ToString();
+                    }
+
+                    if (status == "Pending" || status == null)
+                    {
+                        query = "SELECT * FROM tbl_User WHERE User_ID = '" + Session["ID"].ToString() + "'";
+                        ds = con.getData(query);
+
+                        txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
+                        txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                        txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+                        txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
+                        ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
+                        txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                    }
+                    else if (status == "Approved")
+                    {
+                        query = "SELECT * FROM tbl_User_Update WHERE User_ID = '" + Session["ID"].ToString() + "'";
+                        ds = con.getData(query);
+
+                        txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
+                        txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                        txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+                        txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
+                        ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtMedCategory.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
+                        txtEnrollDate.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
+                        txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        txtPermanentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
+                        ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
+                        txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
+                    }
                 }
             }
-            else
-            {
-                query = "select User_Status from tbl_User_Update where  User_ID = '" + Session["ID"].ToString() + "'";
-                ds = con.getData(query);
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    status = ds.Tables[0].Rows[0][0].ToString();
-                }
-
-                if (status == "Pending" || status == null)
-                {
-                    query = "SELECT * FROM tbl_User WHERE User_ID = '" + Session["ID"].ToString() + "'";
-                    ds = con.getData(query);
-
-                    txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
-                    txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
-                    txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
-                    txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-                    txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
-                    txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
-                    txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
-                    txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
-                    ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
-                    txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
-                    ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
-                    txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
-                }
-                else if (status == "Approved")
-                {
-                    query = "SELECT * FROM tbl_User_Update WHERE User_ID = '" + Session["ID"].ToString() + "'";
-                    ds = con.getData(query);
-
-                    txtfName.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
-                    txtlName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
-                    txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
-                    txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-                    txtPass.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
-                    txtPhone.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
-                    txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
-                    txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
-                    ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
-                    txtMedCategory.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
-                    txtEnrollDate.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
-                    txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
-                    txtPermanentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
-                    ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
-                    txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
-                }
-            }
-
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
@@ -181,7 +240,7 @@ namespace PMIS.Pages
                 if(btnEdit.Text == "Edit")
                 {
                     readdData();
-                    loadData();
+                    loadData1();
                     btnEdit.Text = "Update";
                 }
                 else if(btnEdit.Text == "Update")
@@ -190,15 +249,15 @@ namespace PMIS.Pages
                     ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Pno='" + txtPno.Text + "', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '" + txtCNIC.Text + "', User_Gender='" + ddGender.Text + "',MedCategory='" + txtMedCategory.Text + "', EnrollDate='" + txtEnrollDate.Text + "', PresentAddress='" + txtPresentAdd.Text + "',PermanentAddress ='" + txtPermanentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "' WHERE User_ID ='" + Session["ID"].ToString() + "'";
+                        query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Pno='" + txtPno.Text + "', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '" + txtCNIC.Text + "', User_Gender='" + ddGender.Text + "',MedCategory='" + txtMedCategory.Text + "', EnrollDate='" + txtEnrollDate.Text + "', PresentAddress='" + txtPresentAdd.Text + "',PermanentAddress ='" + txtPermanentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "',Status='Pending' WHERE User_ID ='" + Session["ID"].ToString() + "'";
                         con.setData(query);
-                        loadData();
+                        loadData1();
                     }
                     else
                     {
                         //query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Pno='"+txtPno.Text+"', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '"+txtCNIC.Text+"', User_Gender='" + ddGender.Text + "', User_Address='" + txtPresentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "' WHERE User_ID ='" + Session["ID"].ToString() + "'";
-                        query = "insert into tbl_User_Update (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, MedCategory, EnrollDate, PresentAddress,PermanentAddress,Marital_Status,User_Status,Is_Deleted,Created_On )" +
-                            "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + Session["Role"].ToString() + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Text + "','" + txtMedCategory.Text + "','" + txtEnrollDate.Text + "','" + txtPermanentAdd.Text + "','" + txtPresentAdd.Text + "', '" + ddMariStatus.Text + "','Pending','" + false + "', getDate() )";
+                        query = "insert into tbl_User (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, MedCategory, EnrollDate, PresentAddress,PermanentAddress,Marital_Status,Is_Deleted,Created_On,Status )" +
+                            "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + Session["Role"].ToString() + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Text + "','" + txtMedCategory.Text + "','" + txtEnrollDate.Text + "','" + txtPermanentAdd.Text + "','" + txtPresentAdd.Text + "', '" + ddMariStatus.Text + "','" + false + "', getDate(), 'Pending')";
                         con.setData(query);
                         btnCancel_Click(this, null);
                     }

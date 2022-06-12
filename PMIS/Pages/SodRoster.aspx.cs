@@ -18,7 +18,7 @@ namespace PMIS.Pages
         {
             if (!IsPostBack)
             {
-                query = "select *, DATEDIFF(day, EnrollDate, '2022-06-12') AS date_difference from tbl_User ORDER BY date_difference DESC ";
+                query = "select *, DATEDIFF(day, EnrollDate, '2022-06-12') AS date_difference from tbl_User where Is_Deleted ='"+false+"' ORDER BY date_difference DESC ";
                 ds = con.getData(query);
                 dgv.DataSource = ds;
                 dgv.DataBind();

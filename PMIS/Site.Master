@@ -53,6 +53,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a ID="btnHome" runat="server" href="~/Pages\Dashboard">Dashboard</a></li>
+                        <li><a ID="btnRequest" runat="server" href="~/Pages\Request">Request</a></li>
                         <%--<li><a runat="server" href="~/Pages\Personal_Info.aspx">Personal Information</a></li>
                         <li><a runat="server" href="~/Pages\Family_Info">Family Information</a></li>--%>
                         <%--<li>

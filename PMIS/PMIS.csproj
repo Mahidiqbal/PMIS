@@ -130,6 +130,7 @@
     <Content Include="Pages\Length_Of_Service.aspx" />
     <Content Include="Pages\Family_Info.aspx" />
     <Content Include="Pages\Qualification.aspx" />
+    <Content Include="Pages\Request.aspx" />
     <Content Include="Pages\Transfer_Record.aspx" />
     <Content Include="Pages\UpCountry.aspx" />
     <Content Include="Pages\Forget_Password.aspx" />
@@ -232,6 +233,13 @@
     </Compile>
     <Compile Include="Pages\Qualification.aspx.designer.cs">
       <DependentUpon>Qualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Request.aspx.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Request.aspx.designer.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Transfer_Record.aspx.cs">
       <DependentUpon>Transfer_Record.aspx</DependentUpon>

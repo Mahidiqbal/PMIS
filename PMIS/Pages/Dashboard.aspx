@@ -33,6 +33,18 @@
             opacity:0.5;
             
         }
+        .bg-img {
+            /* The image used */
+            background-image: url("../Resources/2.jpg");
+            min-height: 615px;
+            \
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            top:-30px;
+        }
 
         /* Slideshow container */
         .slideshow-container {
@@ -144,9 +156,9 @@
   
    
            
-    <section class="slideshow-container" style="height:600px; right:-5px; ">
+   <section class="bg-img" >
 
-        <div class="mySlides fade">
+         <%--<div class="mySlides fade"> style="height:600px; right:-5px; "
             <div class="numbertext">1 / 4</div>
             <img src="../Resources/1.jpg" style="width: 100%;">
         </div>
@@ -172,7 +184,7 @@
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-        </div>
+        </div>--%>
 
     </section>
     <section>
@@ -182,11 +194,11 @@
                 <div class="col-sm-3">
                     <asp:Button type="submit" runat="server" class="btn" Text="SANCTION" onclick="BtnSanction_Click"/></div>
                 <div class="col-sm-3">
+                    <asp:Button type="submit" ID="btnActive" runat="server" class="btn" Text="ACTIVE SERVICE LIST" onclick="BtnActiveService_Click"/></div>
+                <div class="col-sm-3">
+                    <asp:Button type="submit" ID="btnLength" runat="server" class="btn" Text="LENGTH OF SERVICE" onclick="BtnLengthOfService_Click"/></div>
+                <div class="col-sm-3">
                     <asp:Button type="submit" runat="server" class="btn" Text="UPCOUNTRY ROSTER" onclick="BtnUpCountry_Click" /></div>
-                <div class="col-sm-3">
-                    <asp:Button type="submit" runat="server" class="btn" Text="ACTIVE SERVICE LIST" onclick="BtnActiveService_Click"/></div>
-                <div class="col-sm-3">
-                    <asp:Button type="submit" runat="server" class="btn" Text="LENGTH OF SERVICE" onclick="BtnLengthOfService_Click"/></div>
                 <%--<div class="col-sm-2"></div>--%>
             </div>
             <br /> <br />

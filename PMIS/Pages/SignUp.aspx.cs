@@ -30,6 +30,11 @@ namespace PMIS.Pages
                 DataSet ds = con.getData(query);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
+                    lblMessage.ForeColor = Color.Red;
+                    lblMessage.Text = "*This P.No is already exist.";
+                }
+                else
+                {
                     //MedCategory, EnrollDate, PresentAddress,PermanentAddress,
                     query = "insert into tbl_User (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, PresentAddress,Marital_Status,Is_Deleted,Created_On )" +
                         "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + ddUserRole.Items[ddUserRole.SelectedIndex].Text + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtUserDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Items[ddGender.SelectedIndex].Value + "','" + txtAddress.Text + "', '" + ddMariStatus.Items[ddMariStatus.SelectedIndex].Text + "','" + false + "', getDate() )";
@@ -38,11 +43,6 @@ namespace PMIS.Pages
                     lblMessage.Text = "Sign up Successsfully wait for Approval.";
 
                     Page_Load(this, null);
-                }
-                else
-                {
-                    lblMessage.ForeColor = Color.Red;
-                    lblMessage.Text = "*This P.No is already exist.";
                 }
             }
             catch (Exception ex)

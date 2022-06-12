@@ -17,6 +17,8 @@ namespace PMIS.Pages
                 {
                     btnSOD.Visible = false;
                     btnTOD.Visible = false;
+                    btnActive.Visible = false;
+                    btnLength.Visible = false;
                 }
             }
           

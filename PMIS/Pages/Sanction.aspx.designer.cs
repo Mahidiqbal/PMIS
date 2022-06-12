@@ -24,22 +24,22 @@ namespace PMIS.Pages
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl user;
 
         /// <summary>
-        /// DDCadre control.
+        /// txtCadre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDCadre;
+        protected global::System.Web.UI.WebControls.TextBox txtCadre;
 
         /// <summary>
-        /// txtWorkSanc control.
+        /// DDWorkingSanc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWorkSanc;
+        protected global::System.Web.UI.WebControls.DropDownList DDWorkingSanc;
 
         /// <summary>
         /// lblMsg control.

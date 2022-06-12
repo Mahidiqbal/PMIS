@@ -46,15 +46,17 @@
               
               <div class="col-md-6">
                   <label>Latest Cadre</label>
-                  <asp:DropDownList ID="DDCadre" class="form-control" runat="server">
-                      
-                  </asp:DropDownList>
+                  <asp:TextBox class="form-control" ID="txtCadre" runat="server" placeholder=""></asp:TextBox>
+                  
               </div>
               <div class="col-md-6">
                   <label>Working Sanction</label>
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtWorkSanc" runat="server" placeholder="" ></asp:TextBox>
-                  </div>
+                  <asp:DropDownList ID="DDWorkingSanc" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Government Sanction" Value="Government Sanction" />
+                      <asp:ListItem Text="Working Sanction" Value="Working Sanction" />
+                      <asp:ListItem Text="CNS Sanction" Value="CNS Sanction" />
+                  </asp:DropDownList>
               </div>
           </div>
        <asp:Label ID="lblMsg" ForeColor="Green" runat="server" Text=""></asp:Label>
@@ -86,7 +88,7 @@
            <div class="row">
                <div class="col-md-2">
                   <div class="form-group" >
-                      <asp:Button ID="btnSearch" runat="server" Text="Submit" class="btn btn-info" OnClick="btnSearch_Click" Width="110px" />
+                      <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-success" OnClick="btnSearch_Click" Width="110px" />
                   </div>
                    </div>
            </div>
@@ -120,10 +122,7 @@
                             </ItemTemplate>  
                             <EditItemTemplate>  
                                 <asp:TextBox ID="txtCadre" runat="server" Text='<%#Eval("latest_cadre")%>'></asp:TextBox>  
-                            </EditItemTemplate>  
-                            <FooterTemplate>  
-                                <asp:TextBox ID="txtCadre" runat="server"></asp:TextBox>  
-                            </FooterTemplate>  
+                            </EditItemTemplate>
                         </asp:TemplateField> 
                     </Columns>  
                 </asp:GridView>  

@@ -11,34 +11,34 @@ namespace PMIS.Pages
 {
 
 
-    public partial class Reports
+    public partial class Request
     {
 
         /// <summary>
-        /// btnNOC control.
+        /// dgv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNOC;
+        protected global::System.Web.UI.WebControls.GridView dgv;
 
         /// <summary>
-        /// btnLeave control.
+        /// dgvFam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLeave;
+        protected global::System.Web.UI.WebControls.GridView dgvFam;
 
         /// <summary>
-        /// btnCasualLeave control.
+        /// dgvQualification control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCasualLeave;
+        protected global::System.Web.UI.WebControls.GridView dgvQualification;
     }
 }

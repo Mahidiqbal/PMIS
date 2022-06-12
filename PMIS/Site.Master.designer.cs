@@ -33,6 +33,15 @@ namespace PMIS
         protected global::System.Web.UI.HtmlControls.HtmlAnchor btnHome;
 
         /// <summary>
+        /// btnRequest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnRequest;
+
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
