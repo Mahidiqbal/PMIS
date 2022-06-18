@@ -93,7 +93,7 @@
             <div class="col-md-4">
             <label>Date of Willingness</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtDate" runat="server" placeholder="" Enabled="false" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtDate1" runat="server" placeholder="" Enabled="false" ></asp:TextBox>
                   </div>
                 </div>
         </div>
@@ -115,7 +115,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgv" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="UpCountryID" OnRowUpdating="dgv_RowUpdating"  OnRowCommand="dgv_RowCommand" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="UpCountryID" OnRowUpdating="dgv_RowUpdating" OnRowDeleting="dgv_RowDeleting"  OnRowCommand="dgv_RowCommand" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />

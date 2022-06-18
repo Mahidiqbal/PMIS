@@ -209,30 +209,30 @@
                   </div>
               </div>
           </div>
-          <!--  <div class="row">
+            <div class="row">
               <div class="col-md-3">
                   <label>Spouse Name</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox1" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpName1" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
               
               <div class="col-md-3">
                   <label>CNIC No</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox2" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpCNIC1" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
             <div class="col-md-3">
                   <label>Nationality</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox3" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpNation1" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
             <div class="col-md-3">
                   <label>Occupation</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox4" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpOc1" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
           </div>
@@ -240,26 +240,26 @@
               <div class="col-md-3">
                   <label>Spouse Name</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox5" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpName2" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
               
               <div class="col-md-3">
                   <label>CNIC No</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox6" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpCNIC2" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
             <div class="col-md-3">
                   <label>Nationality</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox7" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpNation2" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
             <div class="col-md-3">
                   <label>Occupation</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpOc2" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
           </div>
@@ -267,29 +267,29 @@
               <div class="col-md-3">
                   <label>Spouse Name</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpName3" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
               
               <div class="col-md-3">
                   <label>CNIC No</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpCNIC3" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
             <div class="col-md-3">
                   <label>Nationality</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox11" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpNation3" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
             <div class="col-md-3">
                   <label>Occupation</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox12" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtSpOc3" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
-          </div> -->
+          </div>
         <h3>Children Details</h3>
             <hr />
             <div class="row">
@@ -340,18 +340,18 @@
               <div class="col-md-2">
                   <label>Name</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox13" runat="server" placeholder=""></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtChName1" runat="server" placeholder=""></asp:TextBox>
                   </div>
               </div>
                <div class="col-md-2">
                   <label>Date of Birth</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox14" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtChDate1" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
                   </div>
               </div>
               <div class="col-md-2">
                   <label>Gender</label>
-                  <asp:DropDownList ID="DropDownList1" class="form-control" runat="server">
+                  <asp:DropDownList ID="ddChGender1" class="form-control" runat="server">
                       <asp:ListItem Text="Select" Value="Select" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
@@ -360,18 +360,18 @@
               <div class="col-md-2">
                   <label>Qualification</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox15" runat="server" placeholder=""></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtChQua1" runat="server" placeholder=""></asp:TextBox>
                   </div>
               </div>
                <div class="col-md-2">
                   <label>Occupation</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="TextBox16" runat="server" placeholder=""></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtChOcc1" runat="server" placeholder=""></asp:TextBox>
                   </div>
               </div>
               <div class="col-md-2">
                   <label>Marital Status</label>
-                  <asp:DropDownList ID="DropDownList2" class="form-control" runat="server">
+                  <asp:DropDownList ID="ddChMariStatus1" class="form-control" runat="server">
                       <asp:ListItem Text="Select" Value="Select" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
@@ -380,6 +380,271 @@
                       </asp:DropDownList>
               </div>
           </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChName2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChDate2" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Gender</label>
+                  <asp:DropDownList ID="ddChGender2" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Male" Value="Single" />
+                      <asp:ListItem Text="Female" Value="Married" />
+                      </asp:DropDownList>
+              </div>
+              <div class="col-md-2">
+                  <label>Qualification</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChQua2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChOcc2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Marital Status</label>
+                  <asp:DropDownList ID="ddChMariStatus2" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Single" Value="Single" />
+                      <asp:ListItem Text="Married" Value="Married" />
+                      <asp:ListItem Text="Widowed" Value="Widowed" />
+                      <asp:ListItem Text="Divorced" Value="Divorced" />
+                      </asp:DropDownList>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChName3" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChDate3" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Gender</label>
+                  <asp:DropDownList ID="ddChGender3" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Male" Value="Single" />
+                      <asp:ListItem Text="Female" Value="Married" />
+                      </asp:DropDownList>
+              </div>
+              <div class="col-md-2">
+                  <label>Qualification</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChQua3" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChOcc3" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Marital Status</label>
+                  <asp:DropDownList ID="ddChMariStatus3" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Single" Value="Single" />
+                      <asp:ListItem Text="Married" Value="Married" />
+                      <asp:ListItem Text="Widowed" Value="Widowed" />
+                      <asp:ListItem Text="Divorced" Value="Divorced" />
+                      </asp:DropDownList>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChName4" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChDate4" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Gender</label>
+                  <asp:DropDownList ID="ddChGender4" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Male" Value="Single" />
+                      <asp:ListItem Text="Female" Value="Married" />
+                      </asp:DropDownList>
+              </div>
+              <div class="col-md-2">
+                  <label>Qualification</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChQua4" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChOcc4" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Marital Status</label>
+                  <asp:DropDownList ID="ddChMariStatus4" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Single" Value="Single" />
+                      <asp:ListItem Text="Married" Value="Married" />
+                      <asp:ListItem Text="Widowed" Value="Widowed" />
+                      <asp:ListItem Text="Divorced" Value="Divorced" />
+                      </asp:DropDownList>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChName5" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChDate5" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Gender</label>
+                  <asp:DropDownList ID="ddChGender5" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Male" Value="Single" />
+                      <asp:ListItem Text="Female" Value="Married" />
+                      </asp:DropDownList>
+              </div>
+              <div class="col-md-2">
+                  <label>Qualification</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChQua5" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChOcc5" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Marital Status</label>
+                  <asp:DropDownList ID="ddChMariStatus5" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Single" Value="Single" />
+                      <asp:ListItem Text="Married" Value="Married" />
+                      <asp:ListItem Text="Widowed" Value="Widowed" />
+                      <asp:ListItem Text="Divorced" Value="Divorced" />
+                      </asp:DropDownList>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChName6" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChDate6" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Gender</label>
+                  <asp:DropDownList ID="ddChGender6" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Male" Value="Single" />
+                      <asp:ListItem Text="Female" Value="Married" />
+                      </asp:DropDownList>
+              </div>
+              <div class="col-md-2">
+                  <label>Qualification</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChQua6" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChOcc6" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Marital Status</label>
+                  <asp:DropDownList ID="ddChMariStatus6" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Single" Value="Single" />
+                      <asp:ListItem Text="Married" Value="Married" />
+                      <asp:ListItem Text="Widowed" Value="Widowed" />
+                      <asp:ListItem Text="Divorced" Value="Divorced" />
+                      </asp:DropDownList>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChName7" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChDate7" runat="server" TextMode="Date" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Gender</label>
+                  <asp:DropDownList ID="ddChGender7" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Male" Value="Single" />
+                      <asp:ListItem Text="Female" Value="Married" />
+                      </asp:DropDownList>
+              </div>
+              <div class="col-md-2">
+                  <label>Qualification</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChQua7" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtChOcc7" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Marital Status</label>
+                  <asp:DropDownList ID="ddChMariStatus7" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Single" Value="Single" />
+                      <asp:ListItem Text="Married" Value="Married" />
+                      <asp:ListItem Text="Widowed" Value="Widowed" />
+                      <asp:ListItem Text="Divorced" Value="Divorced" />
+                      </asp:DropDownList>
+              </div>
+          </div>
+  
         <h3>Father In Law Details</h3>
         <hr />
           <div class="row">
@@ -415,6 +680,105 @@
                   </div>
               </div>
         </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLaw1" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawOcc1" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Contact No</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawCont1" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+          
+            <div class="col-md-2">
+                <label>Address</label>
+                <div class="form-group">
+                    <asp:TextBox class="form-control" ID="txtF_inLawAdd1" runat="server" placeholder="" TextMode="MultiLine" Rows="1"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-md-2">
+                  <label>Alive or Not</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawAlive1" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+        </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLaw2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawOcc2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Contact No</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawCont2" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+          
+            <div class="col-md-2">
+                <label>Address</label>
+                <div class="form-group">
+                    <asp:TextBox class="form-control" ID="txtF_inLawAdd2" runat="server" placeholder="" TextMode="MultiLine" Rows="1"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-md-2">
+                  <label>Alive or Not</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawAlive2" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+        </div>
+            <div class="row">
+              <div class="col-md-2">
+                  <label>Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLaw3" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+               <div class="col-md-2">
+                  <label>Occupation</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawOcc3" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <label>Contact No</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawCont3" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+          
+            <div class="col-md-2">
+                <label>Address</label>
+                <div class="form-group">
+                    <asp:TextBox class="form-control" ID="txtF_inLawAdd3" runat="server" placeholder="" TextMode="MultiLine" Rows="1"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-md-2">
+                  <label>Alive or Not</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtF_inLawAlive3" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+        </div>
 
         <h3>Mother In Law Details</h3>
                 <hr />
@@ -441,6 +805,84 @@
                   <label>Alive or Not</label>
                   <div class="form-group">
                       <asp:TextBox class="form-control" ID="txtM_inLawAlive" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-3">
+                  <label>Mother in Law Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLaw1" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Occupation of Mother in Law</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLawOcc1" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Address of Mother in Law</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inlawadd1" runat="server" placeholder=""  TextMode="MultiLine" Rows="1"></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Alive or Not</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLawAlive1" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-3">
+                  <label>Mother in Law Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLaw2" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Occupation of Mother in Law</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLawOcc2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Address of Mother in Law</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inlawadd2" runat="server" placeholder=""  TextMode="MultiLine" Rows="1"></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Alive or Not</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLawAlive2" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-3">
+                  <label>Mother in Law Name</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLaw3" runat="server" placeholder="" ></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Occupation of Mother in Law</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLawOcc3" runat="server" placeholder=""></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Address of Mother in Law</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inlawadd3" runat="server" placeholder=""  TextMode="MultiLine" Rows="1"></asp:TextBox>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <label>Alive or Not</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtM_inLawAlive3" runat="server" placeholder=""></asp:TextBox>
                   </div>
               </div>
           </div>

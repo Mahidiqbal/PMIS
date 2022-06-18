@@ -27,13 +27,26 @@ namespace PMIS.Pages
         {
             try
             {
-                query = "INSERT INTO tbl_UpCountryRoster (Pno, Name, Cadre, CurrentStation, DurationServed, DateWill, Station, User_ID, Status, Is_Deleted, Created_On) " +
+                query = "select * from tbl_UpCountryRoster where User_ID = '" + Session["ID"].ToString() + "'";
+                DataSet ds = con.getData(query);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    query = "UPDATE tbl_UpCountryRoster SET Pno='" + txtPno.Text + "', Name='" + txtName.Text + "', Cadre='" + ddCadre.SelectedValue + "', CurrentStation='" + txtCurrentSta.Text + "', DurationServed='" + txtDuration.Text + "', DateWill=convert(varchar, getdate(), 23), Station='" + txtUpcountry.Text + "', Status='Pending' WHERE User_ID = '"+Session["ID"].ToString()+"'";
+                    ds = con.getData(query);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Application Submit Wait for Admin Approval";
+                    loadData();
+                }
+                else
+                {
+                    query = "INSERT INTO tbl_UpCountryRoster (Pno, Name, Cadre, CurrentStation, DurationServed, DateWill, Station, User_ID, Status, Is_Deleted, Created_On) " +
                     " VALUES('" + txtPno.Text + "','" + txtName.Text + "','" + ddCadre.SelectedValue + "','" + txtCurrentSta.Text + "','" + txtDuration.Text + "',convert(varchar, getdate(), 23),'" + txtUpcountry.Text + "', '" + Session["ID"].ToString() + "','Pending','" + false + "',getdate())";
-                con.setData(query);
-                lblMsg.ForeColor = Color.Green;
-                lblMsg.Text = "Application Submit Wait for Admin Approval";
+                    con.setData(query);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Application Submit Wait for Admin Approval";
 
-                Page_Load(this, null);
+                    Page_Load(this, null);
+                }
             }
             catch { }
         }
@@ -70,7 +83,7 @@ namespace PMIS.Pages
                         ddCadre.Text = Convert.ToString(ds.Tables[0].Rows[0][3]);
                         txtCurrentSta.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
                         txtDuration.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-                        txtDate.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
+                        txtDate1.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
                         txtUpcountry.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
                     }
                 }
@@ -96,17 +109,18 @@ namespace PMIS.Pages
                     con.setData(query);
                     loadData();
                 }
-                else if (e.CommandName == "Delete")
-                {
-                    query = "UPDATE tbl_UpCountryRoster SET Is_Deleted = '"+false+"' where UpCountryID = '" + id + "'";
-                    con.setData(query);
-                    loadData();
-                }
             }
             catch (Exception)
             {
 
             }
+        }
+        protected void dgv_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int id1 = Convert.ToInt32(dgv.DataKeys[e.RowIndex].Value.ToString());
+            query = "UPDATE tbl_UpCountryRoster SET Is_Deleted = '" + true + "' where UpCountryID = '" + id1 + "'";
+            ds = con.getData(query);
+            loadData();
         }
         protected void dgv_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {

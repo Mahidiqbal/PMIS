@@ -47,7 +47,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgv" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="User_ID" OnRowCommand="dgv_RowCommand" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="User_ID" OnRowDeleting="dgv_RowDeleting"  OnRowCommand="dgv_RowCommand" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -128,7 +128,14 @@
                                             <asp:TextBox ID="txtGender" Text='<%# Eval("User_Gender") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-
+                                    <asp:TemplateField HeaderText="Enrollment Date">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("EnrollDate") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="EnrollDate" Text='<%# Eval("EnrollDate") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Marital Status">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Marital_Status") %>' runat="server"></asp:Label>
@@ -177,7 +184,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgvFam" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Fam_ID" OnRowCommand="dgv_RowCommand1" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Fam_ID" OnRowCommand="dgv_RowCommand1" OnRowDeleting="dgv_RowDeleting1" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -274,9 +281,54 @@
                                             <asp:TextBox ID="txtMo_CNIC" Text='<%# Eval("Mo_CNIC") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-
-                                   
-
+                                    <asp:TemplateField HeaderText="Nationality">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Mo_Nationality") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Mo_Nationality" Text='<%# Eval("Mo_Nationality") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                   <asp:TemplateField HeaderText="Occupation">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Mo_Occupation") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Mo_Occupation" Text='<%# Eval("Mo_Occupation") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Nok Name">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Nok_Name") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Nok_Name" Text='<%# Eval("Nok_Name") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Nok Relationship">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Nok_Relationship") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Nok_Relationship" Text='<%# Eval("Nok_Relationship") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Nok  Address">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Nok_Address") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Nok_Address" Text='<%# Eval("Nok_Address") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Nok Contact">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Nok_Contact") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Nok_Contact" Text='<%# Eval("Nok_Contact") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Status" InsertVisible="False">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Status") %>' runat="server"></asp:Label>
@@ -306,7 +358,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgvQualification" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="QualificationID" OnRowCommand="dgv_RowCommand2" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="QualificationID" OnRowCommand="dgv_RowCommand2" OnRowDeleting="dgv_RowDeleting2" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -747,7 +799,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgvTransfer" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="TransferID" OnRowCommand="dgv_RowCommand4" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="TransferID" OnRowCommand="dgv_RowCommand4" OnRowDeleting="dgv_RowDeleting4" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -927,7 +979,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgvSanction" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="SanctionID" OnRowCommand="dgv_RowCommand3" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="SanctionID" OnRowCommand="dgv_RowCommand3" OnRowDeleting="dgv_RowDeleting3" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
