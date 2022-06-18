@@ -41,12 +41,20 @@
     <div class="jumbotron">
         <div class="container-fluid">
             <h2><%: Title %>.</h2>
-            <hr />
+            <hr />   
+
             <div class="row">
               <div class="col-md-4">
                   <label>Unit Served</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtUnit1" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:DropDownList ID="DDUnitServed1" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
+                  </asp:DropDownList>
                   </div>
               </div>
                 <div class="col-md-4">
@@ -65,9 +73,14 @@
             <div class="row">
               <div class="col-md-4">
                   <label>Unit Served</label>
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtUnit2" runat="server" placeholder="" ></asp:TextBox>
-                  </div>
+                  <asp:DropDownList ID="DDUnitServed2" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
+                  </asp:DropDownList>
               </div>
                 <div class="col-md-4">
                   <label>From Date</label>
@@ -86,7 +99,14 @@
               <div class="col-md-4">
                   <label>Unit Served</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtUnit3" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:DropDownList ID="DDUnitServed3" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
+                  </asp:DropDownList>
                   </div>
               </div>
                 <div class="col-md-4">
@@ -106,7 +126,14 @@
               <div class="col-md-4">
                   <label>Unit Served</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtUnit4" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:DropDownList ID="DDUnitServed4" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
+                  </asp:DropDownList>
                   </div>
               </div>
                 <div class="col-md-4">
@@ -126,7 +153,14 @@
               <div class="col-md-4">
                   <label>Unit Served</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtUnit5" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:DropDownList ID="DDUnitServed5" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
+                  </asp:DropDownList>
                   </div>
               </div>
                 <div class="col-md-4">
@@ -142,26 +176,7 @@
                   </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                  <label>Unit Served</label>
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtUnit6" runat="server" placeholder="" ></asp:TextBox>
-                  </div>
-              </div>
-                <div class="col-md-4">
-                  <label>From Date</label>
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtFrom6" runat="server" placeholder="" TextMode="Date"></asp:TextBox>
-                  </div>
-              </div>
-                <div class="col-md-4">
-                  <label>To Date</label>
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtTo6" runat="server" placeholder="" TextMode="Date"></asp:TextBox>
-                  </div>
-              </div>
-            </div>
+            
             <br />
             <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
           <div class="col-12 pull-right">

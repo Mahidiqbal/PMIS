@@ -15,13 +15,13 @@ namespace PMIS.Pages
     {
 
         /// <summary>
-        /// txtUnit1 control.
+        /// DDUnitServed1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnit1;
+        protected global::System.Web.UI.WebControls.DropDownList DDUnitServed1;
 
         /// <summary>
         /// txtFrom1 control.
@@ -42,13 +42,13 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtTo1;
 
         /// <summary>
-        /// txtUnit2 control.
+        /// DDUnitServed2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnit2;
+        protected global::System.Web.UI.WebControls.DropDownList DDUnitServed2;
 
         /// <summary>
         /// txtFrom2 control.
@@ -69,13 +69,13 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtTo2;
 
         /// <summary>
-        /// txtUnit3 control.
+        /// DDUnitServed3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnit3;
+        protected global::System.Web.UI.WebControls.DropDownList DDUnitServed3;
 
         /// <summary>
         /// txtFrom3 control.
@@ -96,13 +96,13 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtTo3;
 
         /// <summary>
-        /// txtUnit4 control.
+        /// DDUnitServed4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnit4;
+        protected global::System.Web.UI.WebControls.DropDownList DDUnitServed4;
 
         /// <summary>
         /// txtFrom4 control.
@@ -123,13 +123,13 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtTo4;
 
         /// <summary>
-        /// txtUnit5 control.
+        /// DDUnitServed5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnit5;
+        protected global::System.Web.UI.WebControls.DropDownList DDUnitServed5;
 
         /// <summary>
         /// txtFrom5 control.
@@ -148,33 +148,6 @@ namespace PMIS.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTo5;
-
-        /// <summary>
-        /// txtUnit6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnit6;
-
-        /// <summary>
-        /// txtFrom6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFrom6;
-
-        /// <summary>
-        /// txtTo6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTo6;
 
         /// <summary>
         /// lblMsg control.

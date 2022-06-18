@@ -36,8 +36,8 @@ namespace PMIS.Pages
                 else
                 {
                     //MedCategory, EnrollDate, PresentAddress,PermanentAddress,
-                    query = "insert into tbl_User (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, PresentAddress,Marital_Status,Is_Deleted,Created_On )" +
-                        "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + ddUserRole.Items[ddUserRole.SelectedIndex].Text + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtUserDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Items[ddGender.SelectedIndex].Value + "','" + txtAddress.Text + "', '" + ddMariStatus.Items[ddMariStatus.SelectedIndex].Text + "','" + false + "', getDate() )";
+                    query = "insert into tbl_User (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, PresentAddress,Marital_Status,User_Status,Is_Deleted,Created_On )" +
+                        "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + ddUserRole.Items[ddUserRole.SelectedIndex].Text + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtUserDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Items[ddGender.SelectedIndex].Value + "','" + txtAddress.Text + "', '" + ddMariStatus.Items[ddMariStatus.SelectedIndex].Text + "','Pending','" + false + "', getDate() )";
                     con.setData(query);
                     lblMessage.ForeColor = Color.Green;
                     lblMessage.Text = "Sign up Successsfully wait for Approval.";

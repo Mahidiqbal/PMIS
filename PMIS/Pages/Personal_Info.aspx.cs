@@ -72,7 +72,10 @@ namespace PMIS.Pages
                         txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
                         txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
                         ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtMedCategory.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
+                        txtEnrollDate.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
                         txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        txtPermanentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
                         ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
                         txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
                     }
@@ -243,26 +246,26 @@ namespace PMIS.Pages
                     loadData1();
                     btnEdit.Text = "Update";
                 }
-                else if(btnEdit.Text == "Update")
-                {
-                    query = "select User_ID from tbl_User_Update where User_Pno = '" + txtPno + "'";
-                    ds = con.getData(query);
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Pno='" + txtPno.Text + "', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '" + txtCNIC.Text + "', User_Gender='" + ddGender.Text + "',MedCategory='" + txtMedCategory.Text + "', EnrollDate='" + txtEnrollDate.Text + "', PresentAddress='" + txtPresentAdd.Text + "',PermanentAddress ='" + txtPermanentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "',Status='Pending' WHERE User_ID ='" + Session["ID"].ToString() + "'";
-                        con.setData(query);
-                        loadData1();
-                    }
+                //else if(btnEdit.Text == "Update")
+                //{
+                //    query = "select User_ID from tbl_User_Update where User_Pno = '" + txtPno + "'";
+                //    ds = con.getData(query);
+                //    if (ds.Tables[0].Rows.Count > 0)
+                //    {
+                //        query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Pno='" + txtPno.Text + "', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '" + txtCNIC.Text + "', User_Gender='" + ddGender.Text + "',MedCategory='" + txtMedCategory.Text + "', EnrollDate='" + txtEnrollDate.Text + "', PresentAddress='" + txtPresentAdd.Text + "',PermanentAddress ='" + txtPermanentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "',Status='Pending' WHERE User_ID ='" + Session["ID"].ToString() + "'";
+                //        con.setData(query);
+                //        loadData1();
+                //    }
                     else
                     {
-                        //query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Pno='"+txtPno.Text+"', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '"+txtCNIC.Text+"', User_Gender='" + ddGender.Text + "', User_Address='" + txtPresentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "' WHERE User_ID ='" + Session["ID"].ToString() + "'";
-                        query = "insert into tbl_User (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, MedCategory, EnrollDate, PresentAddress,PermanentAddress,Marital_Status,Is_Deleted,Created_On,Status )" +
-                            "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + Session["Role"].ToString() + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Text + "','" + txtMedCategory.Text + "','" + txtEnrollDate.Text + "','" + txtPermanentAdd.Text + "','" + txtPresentAdd.Text + "', '" + ddMariStatus.Text + "','" + false + "', getDate(), 'Pending')";
+                    query = "UPDATE tbl_User SET User_firstName='" + txtfName.Text + "', User_lastName='" + txtlName.Text + "', User_Role= '" + Session["Role"].ToString() + "', User_Pno='" + txtPno.Text + "', User_Email='" + txtEmail.Text + "', User_Password='" + txtPass.Text + "', User_Phone='" + txtPhone.Text + "', User_DOB='" + txtDOB.Text + "', User_CNIC = '" + txtCNIC.Text + "', User_Gender='" + ddGender.Text + "', MedCategory='" + txtMedCategory.Text + "',EnrollDate='" + txtEnrollDate.Text + "',PresentAddress= '" + txtPresentAdd.Text + "', PermanentAddress='" + txtPermanentAdd.Text + "', Marital_Status='" + ddMariStatus.Text + "',Status='Pending',Modified_ON=getdate(),Modified_By='" + Session["ID"] + "' WHERE User_ID ='" + Session["ID"].ToString() + "'";
+                       // query = "insert into tbl_User (User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender, MedCategory, EnrollDate, PresentAddress,PermanentAddress,Marital_Status,Is_Deleted,Created_On,Status )" +
+                         //   "values('" + txtfName.Text + "', '" + txtlName.Text + "', '" + Session["Role"].ToString() + "', '" + txtPno.Text + "', '" + txtEmail.Text + "', '" + txtPass.Text + "', '" + txtPhone.Text + "', '" + txtDOB.Text + "','" + txtCNIC.Text + "', '" + ddGender.Text + "','" + txtMedCategory.Text + "','" + txtEnrollDate.Text + "','" + txtPermanentAdd.Text + "','" + txtPresentAdd.Text + "', '" + ddMariStatus.Text + "','" + false + "', getDate(), 'Pending')";
                         con.setData(query);
                         btnCancel_Click(this, null);
                     }
                     lblMsg.Text = "Request for Update Information Submit.";
-                }
+                //}
             }
             catch(Exception ex)
             {

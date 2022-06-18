@@ -23,7 +23,7 @@ namespace PMIS.Pages
                 {
                     admin.Visible = false;
                     DDWorkingSanc.SelectedIndex = -1;
-                    txtCadre.Text = "";
+                    DDCadre.SelectedIndex = -1;
                     //query = "Select * from tbl_Qualification";
                     //ds = con.getData(query);
 
@@ -37,24 +37,15 @@ namespace PMIS.Pages
                 {
                     user.Visible = false;
                     admin.Visible = true;
-                    query = "Select * from tbl_Sanction";
-                    ds = con.getData(query);
-                    DDCadre1.DataSource = ds;
-                    DDCadre1.DataBind();
-                    DDCadre1.DataTextField = "latest_cadre";
-                    DDCadre1.DataValueField = "SanctionID";
-                    DDCadre1.DataBind();
-                    DDCadre1.Items.Insert(0, new ListItem("Select", string.Empty));
 
-                    string query1 = "Select DISTINCT * from tbl_Sanction";
-                    ds1 = con.getData(query1);
-                    ddSanction.DataSource = ds1;
-                    ddSanction.DataBind();
-                    ddSanction.DataTextField = "Working_Sanction";
-                    ddSanction.DataValueField = "SanctionID";
-                    ddSanction.DataBind();
-                    ddSanction.Items.Insert(0, new ListItem("Select", string.Empty));
-
+                    //string query1 = "Select DISTINCT * from tbl_Sanction";
+                    //ds1 = con.getData(query1);
+                    //ddSanction.DataSource = ds1;
+                    //ddSanction.DataBind();
+                    //ddSanction.DataTextField = "Working_Sanction";
+                    //ddSanction.DataValueField = "SanctionID";
+                    //ddSanction.DataBind();
+                    //ddSanction.Items.Insert(0, new ListItem("Select", string.Empty));
 
                 }
             }
@@ -63,11 +54,46 @@ namespace PMIS.Pages
         {
             try
             {
-                query = "select * from tbl_Sanction where Working_Sanction = '" + ddSanction.SelectedItem.Text + "' or latest_cadre ='"+DDCadre1.SelectedItem.Text + "'";
+                DataTable dt;
+                
+                query = "SELECT SanctionID,Working_Sanction,latest_cadre,User_firstName + '  ' + User_lastName As Name, User_Pno,Status, " +
+                     "CASE WHEN Unit_Served5 is not null and Unit_Served5 != '' THEN Unit_Served5 " +
+                     "WHEN Unit_Served4 is not null and Unit_Served4 != '' THEN Unit_Served4 " +
+                     "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
+                     "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
+                     "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
+                     "ELSE null END as Unit " +
+                     "FROM View_Sanction where Working_Sanction = '" + ddAdminSanc.SelectedValue + "' or latest_cadre ='" + ddAdminCadre.SelectedValue + "' ";
                 ds = con.getData(query);
-
                 dgv.DataSource = ds;
                 dgv.DataBind();
+
+                ds.Tables[0].DefaultView.RowFilter = "Unit = 'PNS BAHADUR'";
+                dt = (ds.Tables[0].DefaultView).ToTable();
+                dgvBahadur.DataSource = dt;
+                dgvBahadur.DataBind();
+
+                ds.Tables[0].DefaultView.RowFilter = "Unit = 'PNS JAUHAR'";
+                dt = (ds.Tables[0].DefaultView).ToTable();
+                dgvJauhar.DataSource = dt;
+                dgvJauhar.DataBind();
+
+                ds.Tables[0].DefaultView.RowFilter = "Unit = 'PNS RAHBAR'";
+                dt= (ds.Tables[0].DefaultView).ToTable();
+                dgvRAHBAR.DataSource = dt;
+                dgvRAHBAR.DataBind(); 
+
+
+                ds.Tables[0].DefaultView.RowFilter = "Unit = 'PNCA'";
+                dt = (ds.Tables[0].DefaultView).ToTable();
+                dgvPNCA.DataSource = dt;
+                dgvPNCA.DataBind();
+
+                ds.Tables[0].DefaultView.RowFilter = "Unit = 'PNSL'";
+                dt = (ds.Tables[0].DefaultView).ToTable();
+                dgvPNSL.DataSource = dt;
+                dgvPNSL.DataBind();
+
 
             }
             catch
@@ -79,10 +105,10 @@ namespace PMIS.Pages
         {
             try
             {
-                query = "insert into tbl_Sanction (Working_Sanction, latest_cadre, User_ID) Values('" + DDWorkingSanc.SelectedValue + "','"+txtCadre.Text+"', '"+Session["ID"]+"')";
+                query = "insert into tbl_Sanction (Working_Sanction, latest_cadre, User_ID,Is_Deleted, Status,Pno) Values('" + DDWorkingSanc.SelectedValue + "','"+DDCadre.SelectedValue+ "', '"+Session["ID"]+ "', '" + false + "', 'Pending','" + Session["User_Pno"] + "')";
                 con.setData(query);
                 lblMsg.ForeColor = Color.Green;
-                lblMsg.Text = "Data Added";
+                lblMsg.Text = "Data Added Wait for Approval.";
 
                 Page_Load(this,null);
             }

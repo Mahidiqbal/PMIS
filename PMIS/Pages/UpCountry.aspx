@@ -58,7 +58,14 @@
               <div class="col-md-4">
                   <label>Cadre</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtCadre" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:DropDownList ID="ddCadre" class="form-control" runat="server">
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
+                      <asp:ListItem Text="LDC" Value="LDC" />
+                      <asp:ListItem Text="UDC" Value="UDC" />
+                      <asp:ListItem Text="Head Clerk" Value="Head Clerk" />
+                      <asp:ListItem Text="Junior Superident" Value="Junior Superident" />
+                      <asp:ListItem Text="Senior Superident" Value="Senior Superident" />
+                  </asp:DropDownList>
                   </div>
               </div>
           </div>
@@ -75,20 +82,20 @@
                       <asp:TextBox class="form-control" ID="txtDuration" runat="server" placeholder="" ></asp:TextBox>
                   </div>
               </div>
-              <div class="col-md-4">
-                  <label>Date of Willingness</label>
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" TextMode="Date" ID="txtDate" runat="server" placeholder=""></asp:TextBox>
-                  </div>
-              </div>
-          </div>
-        <div class="row">
             <div class="col-md-4">
                   <label>Upcountry Station</label>
                   <div class="form-group">
                       <asp:TextBox class="form-control" ID="txtUpcountry" runat="server" placeholder=""></asp:TextBox>
                   </div>
               </div>
+          </div>
+        <div class="row" id="date"  Visible="false" runat="server" >
+            <div class="col-md-4">
+            <label>Date of Willingness</label>
+                  <div class="form-group">
+                      <asp:TextBox class="form-control" ID="txtDate" runat="server" placeholder="" Enabled="false" ></asp:TextBox>
+                  </div>
+                </div>
         </div>
 
         <br />
@@ -119,7 +126,7 @@
                                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                 <SortedDescendingHeaderStyle BackColor="#00547E" />
                                 <Columns>
-                                    <asp:TemplateField HeaderText="ID">
+                                    <asp:TemplateField HeaderText="ID" Visible="false">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("UpCountryID") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
@@ -128,7 +135,7 @@
                                         </EditItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField ItemStyle-Width="600px" HeaderText="P.NO">  
+                                    <asp:TemplateField  HeaderText="P.NO">  
                             <ItemTemplate>  
                                 <asp:Label ID="pno" runat="server" Text='<%#Eval("Pno")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -136,7 +143,7 @@
                                 <asp:TextBox ID="pno" runat="server" Text='<%#Eval("Pno")%>'></asp:TextBox>  
                             </EditItemTemplate>  
                         </asp:TemplateField>   
-                        <asp:TemplateField ItemStyle-Width="600px" HeaderText="Name">  
+                        <asp:TemplateField  HeaderText="Name">  
                             <ItemTemplate>  
                                 <asp:Label ID="lblName" runat="server" Text='<%#Eval("Name")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -144,7 +151,7 @@
                                 <asp:TextBox ID="txtName" runat="server" Text='<%#Eval("Name")%>'></asp:TextBox>  
                             </EditItemTemplate>  
                         </asp:TemplateField>   
-                       <asp:TemplateField ItemStyle-Width="600px" HeaderText="Cadre">  
+                       <asp:TemplateField  HeaderText="Cadre">  
                             <ItemTemplate>  
                                 <asp:Label ID="lblCadre" runat="server" Text='<%#Eval("Cadre")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -152,7 +159,7 @@
                                 <asp:TextBox ID="txtCadre" runat="server" Text='<%#Eval("Cadre")%>'></asp:TextBox>  
                             </EditItemTemplate>
                         </asp:TemplateField> 
-                        <asp:TemplateField ItemStyle-Width="600px" HeaderText="Current Station">  
+                        <asp:TemplateField HeaderText="Current Station">  
                             <ItemTemplate>  
                                 <asp:Label ID="lblCSta" runat="server" Text='<%#Eval("CurrentStation")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -160,15 +167,8 @@
                                 <asp:TextBox ID="txtCaSta" runat="server" Text='<%#Eval("CurrentStation")%>'></asp:TextBox>  
                             </EditItemTemplate>
                         </asp:TemplateField> 
-                        <asp:TemplateField ItemStyle-Width="600px" HeaderText="UpCountry Station">  
-                            <ItemTemplate>  
-                                <asp:Label ID="lblSta" runat="server" Text='<%#Eval("Station")%>'></asp:Label>  
-                            </ItemTemplate>  
-                            <EditItemTemplate>  
-                                <asp:TextBox ID="txtSta" runat="server" Text='<%#Eval("Station")%>'></asp:TextBox>  
-                            </EditItemTemplate>
-                        </asp:TemplateField> 
-                        <asp:TemplateField ItemStyle-Width="600px" HeaderText="Duration Served">  
+                        
+                        <asp:TemplateField  HeaderText="Duration Served">  
                             <ItemTemplate>  
                                 <asp:Label ID="lblDu" runat="server" Text='<%#Eval("DurationServed")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -176,7 +176,15 @@
                                 <asp:TextBox ID="txtDu" runat="server" Text='<%#Eval("DurationServed")%>'></asp:TextBox>  
                             </EditItemTemplate>
                         </asp:TemplateField> 
-                        <asp:TemplateField ItemStyle-Width="600px" HeaderText="Date of Willingness">  
+                                    <asp:TemplateField  HeaderText="UpCountry Station">  
+                            <ItemTemplate>  
+                                <asp:Label ID="lblSta" runat="server" Text='<%#Eval("Station")%>'></asp:Label>  
+                            </ItemTemplate>  
+                            <EditItemTemplate>  
+                                <asp:TextBox ID="txtSta" runat="server" Text='<%#Eval("Station")%>'></asp:TextBox>  
+                            </EditItemTemplate>
+                        </asp:TemplateField> 
+                        <asp:TemplateField HeaderText="Date of Willingness">  
                             <ItemTemplate>  
                                 <asp:Label ID="lbldate" runat="server" Text='<%#Eval("DateWill")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -184,7 +192,7 @@
                                 <asp:TextBox ID="txtDate" runat="server" Text='<%#Eval("DateWill")%>'></asp:TextBox>  
                             </EditItemTemplate>
                         </asp:TemplateField> 
-                        <asp:TemplateField ItemStyle-Width="600px" HeaderText="Status">  
+                        <asp:TemplateField  HeaderText="Status">  
                             <ItemTemplate>  
                                 <asp:Label ID="lblStatus" runat="server" Text='<%#Eval("Status")%>'></asp:Label>  
                             </ItemTemplate>  
@@ -195,8 +203,9 @@
 
                                     <asp:TemplateField HeaderText="Request">
                                         <ItemTemplate>
-                                            <asp:Button runat="server" CommandName="Approve" ToolTip="Approve" CommandArgument='<%# Eval("User_ID") %>' ForeColor="White" CssClass="btn btn-info" Text="Approve" />
-                                            <asp:Button runat="server" CommandName="Reject" ToolTip="Reject" CommandArgument='<%# Eval("User_ID") %>' ForeColor="White" CssClass="btn btn-warning" Text="Reject" />
+                                            <asp:Button runat="server" CommandName="Approve" ToolTip="Approve" CommandArgument='<%# Eval("UpCountryID") %>' ForeColor="White" CssClass="btn btn-info" Text="Approve" />
+                                            <asp:Button runat="server" CommandName="Reject" ToolTip="Reject" CommandArgument='<%# Eval("UpCountryID") %>' ForeColor="White" CssClass="btn btn-warning" Text="Reject" />
+                                            <asp:Button runat="server" CommandName="Delete" ToolTip="Delete" ForeColor="White" CssClass="btn btn-danger" Text="Delete" CommandArgument='<%# Eval("UpCountryID") %>' />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 

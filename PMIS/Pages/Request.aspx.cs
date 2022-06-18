@@ -21,6 +21,8 @@ namespace PMIS.Pages
                 loadData();
                 loadData1();
                 loadData2();
+                loadData3();
+                loadData4();
             }
         }
         public void loadData()
@@ -44,6 +46,20 @@ namespace PMIS.Pages
             dgvQualification.DataSource = ds;
             dgvQualification.DataBind();
         }
+        public void loadData3()
+        {
+            query = "SELECT * FROM tbl_Sanction where Is_Deleted = '" + false + "'";
+            ds = con.getData(query);
+            dgvSanction.DataSource = ds;
+            dgvSanction.DataBind();
+        }
+        public void loadData4()
+        {
+            query = "SELECT * FROM tbl_Transfer where Is_Deleted = '" + false + "'";
+            ds = con.getData(query);
+            dgvTransfer.DataSource = ds;
+            dgvTransfer.DataBind();
+        }
 
         int id;
         protected void dgv_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -61,6 +77,12 @@ namespace PMIS.Pages
                 else if (e.CommandName == "Reject")
                 {
                     query = "UPDATE tbl_User SET Status = 'Rejected' where User_ID = '" + id + "'";
+                    con.setData(query);
+                    loadData();
+                }
+                else if (e.CommandName == "Delete")
+                {
+                    query = "UPDATE tbl_User SET Is_Deleted = '"+false+"' where User_ID = '" + id + "'";
                     con.setData(query);
                     loadData();
                 }
@@ -89,6 +111,12 @@ namespace PMIS.Pages
                     con.setData(query);
                     loadData1();
                 }
+                else if (e.CommandName == "Delete")
+                {
+                    query = "UPDATE tbl_FamilyInfo SET Is_Deleted = '" + false + "' where Fam_ID = '" + id + "'";
+                    con.setData(query);
+                    loadData();
+                }
             }
             catch (Exception)
             {
@@ -112,6 +140,74 @@ namespace PMIS.Pages
                     query = "UPDATE tbl_Qualification SET Status = 'Rejected' where QualificationID = '" + id1 + "'";
                     con.setData(query);
                     loadData2();
+                }
+                else if (e.CommandName == "Delete")
+                {
+                    query = "UPDATE tbl_Qualification SET IsDeleted = '" + false + "' where QualificationID = '" + id + "'";
+                    con.setData(query);
+                    loadData();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        protected void dgv_RowCommand3(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                int id1 = Convert.ToInt32(e.CommandArgument.ToString());
+                if (e.CommandName == "Approve")
+                {
+                    query = "UPDATE tbl_Sanction SET Status = 'Approved' where SanctionID = '" + id1 + "'";
+                    con.setData(query);
+                    loadData3();
+
+                }
+                else if (e.CommandName == "Reject")
+                {
+                    query = "UPDATE tbl_Sanction SET Status = 'Rejected' where SanctionID = '" + id1 + "'";
+                    con.setData(query);
+                    loadData3();
+                }
+                else if (e.CommandName == "Delete")
+                {
+                    query = "UPDATE tbl_Sanction SET Is_Deleted = '" + false + "' where SanctionID = '" + id + "'";
+                    con.setData(query);
+                    loadData();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        protected void dgv_RowCommand4(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                int id1 = Convert.ToInt32(e.CommandArgument.ToString());
+                if (e.CommandName == "Approve")
+                {
+                    query = "UPDATE tbl_Transfer SET Status = 'Approved' where TransferID = '" + id1 + "'";
+                    con.setData(query);
+                    loadData4();
+
+                }
+                else if (e.CommandName == "Reject")
+                {
+                    query = "UPDATE tbl_Transfer SET Status = 'Rejected' where TransferID = '" + id1 + "'";
+                    con.setData(query);
+                    loadData4();
+                }
+                else if (e.CommandName == "Delete")
+                {
+                    query = "UPDATE tbl_Transfer SET Is_Deleted = '"+false+"' where TransferID = '" + id1 + "'";
+                    con.setData(query);
+                    loadData4();
                 }
             }
             catch (Exception)

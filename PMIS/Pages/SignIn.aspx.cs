@@ -34,7 +34,7 @@ namespace PMIS.Pages
                 }
                 else
                 {
-                    query = "SELECT User_ID,User_Role,User_firstName,User_Pno FROM tbl_User WHERE User_Email='" + txtEmail.Value + "' AND User_Password='" + txtPsw.Value + "'";
+                    query = "SELECT User_ID,User_Role,User_firstName,User_Pno FROM tbl_User WHERE User_Email='" + txtEmail.Value + "' AND User_Password='" + txtPsw.Value + "' AND Is_Deleted ='" + false + "' AND User_Status='Approved'";
                     ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
@@ -46,7 +46,6 @@ namespace PMIS.Pages
                         if (role == "Admin")
                         {
                             Response.Redirect("Home.aspx");
-                            return;
                         }
                         else if (role == "User")
                         {
@@ -66,6 +65,7 @@ namespace PMIS.Pages
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = ex.Message;
             }
+
         }
 
         protected void BtnSignUp_Click(object sender, EventArgs e)

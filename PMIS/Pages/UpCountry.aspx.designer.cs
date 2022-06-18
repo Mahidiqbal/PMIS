@@ -42,13 +42,13 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// txtCadre control.
+        /// ddCadre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCadre;
+        protected global::System.Web.UI.WebControls.DropDownList ddCadre;
 
         /// <summary>
         /// txtCurrentSta control.
@@ -69,15 +69,6 @@ namespace PMIS.Pages
         protected global::System.Web.UI.WebControls.TextBox txtDuration;
 
         /// <summary>
-        /// txtDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
-
-        /// <summary>
         /// txtUpcountry control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,24 @@ namespace PMIS.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUpcountry;
+
+        /// <summary>
+        /// date control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl date;
+
+        /// <summary>
+        /// txtDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
         /// lblMsg control.

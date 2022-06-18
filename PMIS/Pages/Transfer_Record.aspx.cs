@@ -24,24 +24,22 @@ namespace PMIS.Pages
                     DataSet ds2 = con.getData(query);
                     if (ds2.Tables[0].Rows.Count > 0)
                     {
-                        txtUnit1.Text = Convert.ToString(ds2.Tables[0].Rows[0][1]);
+                        DDUnitServed1.SelectedItem.Text = Convert.ToString(ds2.Tables[0].Rows[0][1]);
                         txtFrom1.Text = Convert.ToString(ds2.Tables[0].Rows[0][2]);
                         txtTo1.Text = Convert.ToString(ds2.Tables[0].Rows[0][3]);
-                        txtUnit2.Text = Convert.ToString(ds2.Tables[0].Rows[0][4]);
+                        DDUnitServed2.SelectedItem.Text = Convert.ToString(ds2.Tables[0].Rows[0][4]);
                         txtFrom2.Text = Convert.ToString(ds2.Tables[0].Rows[0][5]);
                         txtTo2.Text = Convert.ToString(ds2.Tables[0].Rows[0][6]);
-                        txtUnit3.Text = Convert.ToString(ds2.Tables[0].Rows[0][7]);
+                        DDUnitServed3.SelectedItem.Text = Convert.ToString(ds2.Tables[0].Rows[0][7]);
                         txtFrom3.Text = Convert.ToString(ds2.Tables[0].Rows[0][8]);
                         txtTo3.Text = Convert.ToString(ds2.Tables[0].Rows[0][9]);
-                        txtUnit4.Text = Convert.ToString(ds2.Tables[0].Rows[0][10]);
+                        DDUnitServed4.SelectedItem.Text = Convert.ToString(ds2.Tables[0].Rows[0][10]);
                         txtFrom4.Text = Convert.ToString(ds2.Tables[0].Rows[0][11]);
                         txtTo4.Text = Convert.ToString(ds2.Tables[0].Rows[0][12]);
-                        txtUnit5.Text = Convert.ToString(ds2.Tables[0].Rows[0][13]);
+                        DDUnitServed5.SelectedItem.Text = Convert.ToString(ds2.Tables[0].Rows[0][13]);
                         txtFrom5.Text = Convert.ToString(ds2.Tables[0].Rows[0][14]);
                         txtTo5.Text = Convert.ToString(ds2.Tables[0].Rows[0][15]);
-                        txtUnit6.Text = Convert.ToString(ds2.Tables[0].Rows[0][16]);
-                        txtFrom6.Text = Convert.ToString(ds2.Tables[0].Rows[0][17]);
-                        txtTo6.Text = Convert.ToString(ds2.Tables[0].Rows[0][18]);
+
                     }
                     else
                     {
@@ -51,29 +49,26 @@ namespace PMIS.Pages
                 }
                 else if (Session["Role"].ToString() == "User")
                 {
-                    query = "select * from tbl_Transfer where User_ID = '" + Session["ID"].ToString() + "'";
+                    query = "select * from tbl_Transfer where User_ID = '" + Session["ID"].ToString() + "' and Status='Approved'";
                     DataSet ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         btnEdit.Text = "Update";
-                        txtUnit1.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+                        DDUnitServed1.SelectedItem.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
                         txtFrom1.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
                         txtTo1.Text = Convert.ToString(ds.Tables[0].Rows[0][3]);
-                        txtUnit2.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
+                        DDUnitServed2.SelectedItem.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
                         txtFrom2.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
                         txtTo2.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
-                        txtUnit3.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                        DDUnitServed3.SelectedItem.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
                         txtFrom3.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
                         txtTo3.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
-                        txtUnit4.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        DDUnitServed4.SelectedItem.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
                         txtFrom4.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
                         txtTo4.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
-                        txtUnit5.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        DDUnitServed5.SelectedItem.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
                         txtFrom5.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
                         txtTo5.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
-                        txtUnit6.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
-                        txtFrom6.Text = Convert.ToString(ds.Tables[0].Rows[0][17]);
-                        txtTo6.Text = Convert.ToString(ds.Tables[0].Rows[0][18]);
                     }
                     else
                     {
@@ -82,17 +77,17 @@ namespace PMIS.Pages
                         lblMsg.Text = "No Record Found";
                     }
                 }
-
             }
-                    }
+        }
+        
         string query;
         DB_Conn con = new DB_Conn();
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                query = "INSERT INTO tbl_Transfer(Unit_Served1,From_Date1,To_Date1,Unit_Served2,From_Date2,To_Date2,Unit_Served3,From_Date3,To_Date3,Unit_Served4,From_Date4,To_Date4,Unit_Served5,From_Date5,To_Date5,Unit_Served6,From_Date6,To_Date6,Is_Deleted,Created_On,Created_By,Pno) " +
-                    " VALUES('" + txtUnit1.Text + "','" + txtFrom1.Text + "','" + txtTo2.Text + "','" + txtUnit2.Text + "','" + txtFrom2.Text + "','" + txtTo2.Text + "','" + txtUnit3.Text + "','" + txtFrom3.Text + "','" + txtTo3.Text + "','" + txtUnit4.Text + "','" + txtFrom4.Text + "','" + txtTo4.Text + "','" + txtUnit5.Text + "','" + txtFrom5.Text + "','" + txtTo5.Text + "','" + txtUnit6.Text + "','" + txtFrom6.Text + "','" + txtTo6.Text + "','"+false+ "',getdate(),'" + Session["ID"].ToString() + "','" +Session["User_Pno"].ToString() + "')";
+                query = "INSERT INTO tbl_Transfer(Unit_Served1,From_Date1,To_Date1,Unit_Served2,From_Date2,To_Date2,Unit_Served3,From_Date3,To_Date3,Unit_Served4,From_Date4,To_Date4,Unit_Served5,From_Date5,To_Date5,Is_Deleted,Created_On,Created_By,Pno,User_ID,Status) " +
+                    " VALUES('" + DDUnitServed1.SelectedValue + "','" + txtFrom1.Text + "','" + txtTo2.Text + "','" + DDUnitServed2.SelectedValue + "','" + txtFrom2.Text + "','" + txtTo2.Text + "','" + DDUnitServed3.SelectedValue + "','" + txtFrom3.Text + "','" + txtTo3.Text + "','" + DDUnitServed4.SelectedValue + "','" + txtFrom4.Text + "','" + txtTo4.Text + "','" + DDUnitServed5.SelectedValue + "','" + txtFrom5.Text + "','" + txtTo5.Text + "','"+false+ "',getdate(),'" + Session["ID"].ToString() + "','" +Session["User_Pno"].ToString() + "','" + Session["ID"].ToString() + "','Pending')";
                 con.setData(query);
                 lblMsg.ForeColor = Color.Green;
                 lblMsg.Text = "Data Submit Successfully";

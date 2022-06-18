@@ -25,7 +25,7 @@ namespace PMIS
         public void loadData()
         {
            
-               query = "SELECT User_ID, User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender,Marital_Status,PresentAddress,User_Status FROM tbl_User where Is_Deleted = '" + false + "'";
+               query = "SELECT User_ID, User_firstName,User_lastName,User_Role,User_Pno,User_Email,User_Password,User_Phone,User_DOB,User_CNIC,User_Gender,Marital_Status,PresentAddress,User_Status FROM tbl_User where Is_Deleted = '" + false + "' order by User_ID desc";
             ds = con.getData(query);
             dgv.DataSource = ds;
             dgv.DataBind();

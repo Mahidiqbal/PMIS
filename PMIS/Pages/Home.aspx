@@ -24,7 +24,7 @@
                                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                 <SortedDescendingHeaderStyle BackColor="#00547E" />
                                 <Columns>
-                                    <asp:TemplateField HeaderText="User ID">
+                                    <asp:TemplateField HeaderText="User ID" Visible="false">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("User_ID") %>' runat="server"></asp:Label>
                                         </ItemTemplate>

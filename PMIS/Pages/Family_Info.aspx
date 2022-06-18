@@ -448,7 +448,7 @@
             <asp:Label ID="lblMsg" ForeColor="Green" runat="server" Text=""></asp:Label>
           <div class="col-12 pull-right">
               <div class="form-group" >
-                      <asp:Button ID="btnCreate" runat="server" Text="Create" class="btn btn-success" Width="110px" OnClick="btnCreate_Click" />
+                      <asp:Button ID="btnCreate" runat="server" Text="Submit" class="btn btn-success" Width="110px" OnClick="btnCreate_Click" />
                       <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="btn btn-danger" Width="110px"  />
                       <asp:Button ID="btnBack" runat="server" Text="Back" class="btn btn-info" OnClick="btnBack_Click" Width="110px" />
               </div>

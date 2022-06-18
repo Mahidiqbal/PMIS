@@ -21,7 +21,7 @@ namespace PMIS.Pages
                 {
                     btnCreate.Visible = false;
                     btnCancel.Visible = false;
-                    query = "select * from tbl_FamilyInfo where Pno = '" + Session["User_Pno"].ToString() + "'";
+                    query = "select * from tbl_FamilyInfo where Pno = '" + Session["Pno"].ToString() + "'";
                     DataSet ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
@@ -67,7 +67,6 @@ namespace PMIS.Pages
                 }
                 else if (Session["Role"].ToString() == "User")
                 {
-                    btnCreate.Text = "Update";
                     query = "select * from tbl_FamilyInfo where User_ID = '" + Session["ID"].ToString() + "' and Status='Approved'";
                     DataSet ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)

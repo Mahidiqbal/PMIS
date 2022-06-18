@@ -28,7 +28,7 @@ namespace PMIS.Pages
             try
             {
                 query = "INSERT INTO tbl_UpCountryRoster (Pno, Name, Cadre, CurrentStation, DurationServed, DateWill, Station, User_ID, Status, Is_Deleted, Created_On) " +
-                    " VALUES('" + txtPno.Text + "','" + txtName.Text + "','" + txtCadre.Text + "','" + txtCurrentSta.Text + "','" + txtDuration.Text + "','" + txtDate.Text + "','" + txtCurrentSta.Text + "', '" + Session["ID"].ToString() + "','Pending','" + false + "',getdate())";
+                    " VALUES('" + txtPno.Text + "','" + txtName.Text + "','" + ddCadre.SelectedValue + "','" + txtCurrentSta.Text + "','" + txtDuration.Text + "',convert(varchar, getdate(), 23),'" + txtUpcountry.Text + "', '" + Session["ID"].ToString() + "','Pending','" + false + "',getdate())";
                 con.setData(query);
                 lblMsg.ForeColor = Color.Green;
                 lblMsg.Text = "Application Submit Wait for Admin Approval";
@@ -46,7 +46,13 @@ namespace PMIS.Pages
                     btnApply.Visible = false;
                     btnCancel.Visible = false;
                     User.Visible = false;
-                    query = "Select * from tbl_UpCountryRoster where Is_Deleted = '" + false + "'";
+                    query = "Select * from tbl_UpCountryRoster where Is_Deleted = '" + false + "' " +
+                        "ORDER BY  CASE WHEN Cadre = 'Senior Superident' THEN 1 " +
+                        "WHEN Cadre = 'Junior Superident' THEN 2 " +
+                        "WHEN Cadre = 'Head Clerk' THEN 3 " +
+                        "WHEN Cadre = 'UDC' THEN 4 " +
+                        "ELSE 5 END, DateWill desc";
+
                     ds = con.getData(query);
                     dgv.DataSource = ds;
                     dgv.DataBind();
@@ -58,18 +64,14 @@ namespace PMIS.Pages
                     DataSet ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
+                        date.Visible = true;
                         txtPno.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
                         txtName.Text = Convert.ToString(ds.Tables[0].Rows[0][2]);
-                        txtCadre.Text = Convert.ToString(ds.Tables[0].Rows[0][3]);
+                        ddCadre.Text = Convert.ToString(ds.Tables[0].Rows[0][3]);
                         txtCurrentSta.Text = Convert.ToString(ds.Tables[0].Rows[0][4]);
                         txtDuration.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
                         txtDate.Text = Convert.ToString(ds.Tables[0].Rows[0][6]);
                         txtUpcountry.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
-                    }
-                    else
-                    {
-                        lblMsg.ForeColor = Color.Red;
-                        lblMsg.Text = "Your Status is Pending.";
                     }
                 }
             }
@@ -91,6 +93,12 @@ namespace PMIS.Pages
                 else if (e.CommandName == "Reject")
                 {
                     query = "UPDATE tbl_UpCountryRoster SET Status = 'Rejected' where UpCountryID = '" + id + "'";
+                    con.setData(query);
+                    loadData();
+                }
+                else if (e.CommandName == "Delete")
+                {
+                    query = "UPDATE tbl_UpCountryRoster SET Is_Deleted = '"+false+"' where UpCountryID = '" + id + "'";
                     con.setData(query);
                     loadData();
                 }
