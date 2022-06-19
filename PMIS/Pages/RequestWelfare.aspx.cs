@@ -120,17 +120,18 @@ namespace PMIS.Pages
                     con.setData(query);
                     loadData();
                 }
-                else  if(e.CommandName == "Delete")
-                {
-                    query = "UPDATE tbl_Request SET Is_Delete = '"+true+"' where Pno = '" + id + "'";
-                    con.setData(query);
-                    loadData();
-                }
             }
             catch (Exception)
             {
 
             }
+        }
+        protected void dgv_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int id1 = Convert.ToInt32(dgv.DataKeys[e.RowIndex].Value.ToString());
+            query = "UPDATE tbl_Request SET Is_Deleted = '" + true + "' where Pno = '" + id1 + "'";
+            ds = con.getData(query);
+            loadData();
         }
     }
 }

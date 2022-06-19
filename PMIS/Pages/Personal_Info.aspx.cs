@@ -47,7 +47,10 @@ namespace PMIS.Pages
                         txtDOB.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
                         txtCNIC.Text = Convert.ToString(ds.Tables[0].Rows[0][9]);
                         ddGender.Text = Convert.ToString(ds.Tables[0].Rows[0][10]);
+                        txtMedCategory.Text = Convert.ToString(ds.Tables[0].Rows[0][11]);
+                        txtEnrollDate.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
                         txtPresentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+                        txtPermanentAdd.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
                         ddMariStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][15]);
                         txtStatus.Text = Convert.ToString(ds.Tables[0].Rows[0][16]);
                     }

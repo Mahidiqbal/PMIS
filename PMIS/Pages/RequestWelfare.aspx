@@ -146,7 +146,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgv" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Pno"  OnRowCommand="dgv_RowCommand" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Pno" OnRowDeleting="dgv_RowDeleting"  OnRowCommand="dgv_RowCommand" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />

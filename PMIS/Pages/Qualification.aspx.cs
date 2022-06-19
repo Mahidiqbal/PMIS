@@ -19,6 +19,9 @@ namespace PMIS.Pages
         {
             if(!IsPostBack)
             {
+                btnApprove.Visible = false;
+                btnReject.Visible = false;
+                btnDelete.Visible = false;
                 if (Session["Role"].ToString() == "Admin")
                 {
                     btnSubmit.Visible = false;
@@ -57,35 +60,35 @@ namespace PMIS.Pages
                         txtCourse2.Text = Convert.ToString(ds1.Tables[0].Rows[0][26]);
                         txtCourse3.Text = Convert.ToString(ds1.Tables[0].Rows[0][27]);
                         txtCourse4.Text = Convert.ToString(ds1.Tables[0].Rows[0][28]);
-                        txtInstitute1.Text = Convert.ToString(ds1.Tables[0].Rows[0][30]);
-                        txtInstitute2.Text = Convert.ToString(ds1.Tables[0].Rows[0][31]);
-                        txtInstitute3.Text = Convert.ToString(ds1.Tables[0].Rows[0][32]);
-                        txtInstitute4.Text = Convert.ToString(ds1.Tables[0].Rows[0][33]);
-                        txtstatus1.Text = Convert.ToString(ds1.Tables[0].Rows[0][34]);
-                        txtstatus2.Text = Convert.ToString(ds1.Tables[0].Rows[0][35]);
-                        txtstatus3.Text = Convert.ToString(ds1.Tables[0].Rows[0][36]);
-                        txtstatus4.Text = Convert.ToString(ds1.Tables[0].Rows[0][37]);
+                        txtInstitute1.Text = Convert.ToString(ds1.Tables[0].Rows[0][29]);
+                        txtInstitute2.Text = Convert.ToString(ds1.Tables[0].Rows[0][30]);
+                        txtInstitute3.Text = Convert.ToString(ds1.Tables[0].Rows[0][31]);
+                        txtInstitute4.Text = Convert.ToString(ds1.Tables[0].Rows[0][32]);
+                        txtstatus1.Text = Convert.ToString(ds1.Tables[0].Rows[0][33]);
+                        txtstatus2.Text = Convert.ToString(ds1.Tables[0].Rows[0][34]);
+                        txtstatus3.Text = Convert.ToString(ds1.Tables[0].Rows[0][35]);
+                        txtstatus4.Text = Convert.ToString(ds1.Tables[0].Rows[0][36]);
 
-                        txtCadre1.Text = Convert.ToString(ds1.Tables[0].Rows[0][38]);
-                        txtCadre2.Text = Convert.ToString(ds1.Tables[0].Rows[0][39]);
-                        txtCadre3.Text = Convert.ToString(ds1.Tables[0].Rows[0][40]);
-                        txtCadre4.Text = Convert.ToString(ds1.Tables[0].Rows[0][41]);
-                        txtDate1.Text = Convert.ToString(ds1.Tables[0].Rows[0][42]);
-                        txtDate2.Text = Convert.ToString(ds1.Tables[0].Rows[0][43]);
-                        txtDate3.Text = Convert.ToString(ds1.Tables[0].Rows[0][44]);
-                        txtDate4.Text = Convert.ToString(ds1.Tables[0].Rows[0][45]);
-                        txtCadre1.Text = Convert.ToString(ds1.Tables[0].Rows[0][38]);
-                        txtCadre2.Text = Convert.ToString(ds1.Tables[0].Rows[0][39]);
-                        txtCadre3.Text = Convert.ToString(ds1.Tables[0].Rows[0][40]);
-                        txtCadre4.Text = Convert.ToString(ds1.Tables[0].Rows[0][41]);
-                        txtCadre5.Text = Convert.ToString(ds1.Tables[0].Rows[0][42]);
-                        txtCadre6.Text = Convert.ToString(ds1.Tables[0].Rows[0][43]);
-                        txtDate1.Text = Convert.ToString(ds1.Tables[0].Rows[0][44]);
-                        txtDate2.Text = Convert.ToString(ds1.Tables[0].Rows[0][45]);
-                        txtDate3.Text = Convert.ToString(ds1.Tables[0].Rows[0][46]);
-                        txtDate4.Text = Convert.ToString(ds1.Tables[0].Rows[0][47]);
-                        txtDate5.Text = Convert.ToString(ds1.Tables[0].Rows[0][48]);
-                        txtDate5.Text = Convert.ToString(ds1.Tables[0].Rows[0][49]);
+                        txtCadre1.Text = Convert.ToString(ds1.Tables[0].Rows[0][37]);
+                        txtCadre2.Text = Convert.ToString(ds1.Tables[0].Rows[0][38]);
+                        txtCadre3.Text = Convert.ToString(ds1.Tables[0].Rows[0][39]);
+                        txtCadre4.Text = Convert.ToString(ds1.Tables[0].Rows[0][40]);
+                        txtCadre5.Text = Convert.ToString(ds1.Tables[0].Rows[0][41]);
+                        txtCadre6.Text = Convert.ToString(ds1.Tables[0].Rows[0][42]);
+                        txtDate1.Text = Convert.ToString(ds1.Tables[0].Rows[0][43]);
+                        txtDate2.Text = Convert.ToString(ds1.Tables[0].Rows[0][44]);
+                        txtDate3.Text = Convert.ToString(ds1.Tables[0].Rows[0][45]);
+                        txtDate4.Text = Convert.ToString(ds1.Tables[0].Rows[0][46]);
+                        txtDate5.Text = Convert.ToString(ds1.Tables[0].Rows[0][47]);
+                        txtDate6.Text = Convert.ToString(ds1.Tables[0].Rows[0][48]);
+
+                        if(Session["Request"].ToString()=="1")
+                        {
+                            btnBack.Visible = false;
+                            btnApprove.Visible = true;
+                            btnReject.Visible = true;
+                            btnDelete.Visible = true;
+                        }
                     }
                 }
                 else if (Session["Role"].ToString() == "User")
@@ -123,30 +126,64 @@ namespace PMIS.Pages
                         txtCourse2.Text = Convert.ToString(ds.Tables[0].Rows[0][26]);
                         txtCourse3.Text = Convert.ToString(ds.Tables[0].Rows[0][27]);
                         txtCourse4.Text = Convert.ToString(ds.Tables[0].Rows[0][28]);
-                        txtInstitute1.Text = Convert.ToString(ds.Tables[0].Rows[0][30]);
-                        txtInstitute2.Text = Convert.ToString(ds.Tables[0].Rows[0][31]);
-                        txtInstitute3.Text = Convert.ToString(ds.Tables[0].Rows[0][32]);
-                        txtInstitute4.Text = Convert.ToString(ds.Tables[0].Rows[0][33]);
-                        txtstatus1.Text = Convert.ToString(ds.Tables[0].Rows[0][34]);
-                        txtstatus2.Text = Convert.ToString(ds.Tables[0].Rows[0][35]);
-                        txtstatus3.Text = Convert.ToString(ds.Tables[0].Rows[0][36]);
-                        txtstatus4.Text = Convert.ToString(ds.Tables[0].Rows[0][37]);
+                        txtInstitute1.Text = Convert.ToString(ds.Tables[0].Rows[0][29]);
+                        txtInstitute2.Text = Convert.ToString(ds.Tables[0].Rows[0][30]);
+                        txtInstitute3.Text = Convert.ToString(ds.Tables[0].Rows[0][31]);
+                        txtInstitute4.Text = Convert.ToString(ds.Tables[0].Rows[0][32]);
+                        txtstatus1.Text = Convert.ToString(ds.Tables[0].Rows[0][33]);
+                        txtstatus2.Text = Convert.ToString(ds.Tables[0].Rows[0][34]);
+                        txtstatus3.Text = Convert.ToString(ds.Tables[0].Rows[0][35]);
+                        txtstatus4.Text = Convert.ToString(ds.Tables[0].Rows[0][36]);
 
-                        txtCadre1.Text = Convert.ToString(ds.Tables[0].Rows[0][38]);
-                        txtCadre2.Text = Convert.ToString(ds.Tables[0].Rows[0][39]);
-                        txtCadre3.Text = Convert.ToString(ds.Tables[0].Rows[0][40]);
-                        txtCadre4.Text = Convert.ToString(ds.Tables[0].Rows[0][41]);
-                        txtCadre5.Text = Convert.ToString(ds.Tables[0].Rows[0][42]);
-                        txtCadre6.Text = Convert.ToString(ds.Tables[0].Rows[0][43]);
-                        txtDate1.Text = Convert.ToString(ds.Tables[0].Rows[0][44]);
-                        txtDate2.Text = Convert.ToString(ds.Tables[0].Rows[0][45]);
-                        txtDate3.Text = Convert.ToString(ds.Tables[0].Rows[0][46]);
-                        txtDate4.Text = Convert.ToString(ds.Tables[0].Rows[0][47]);
-                        txtDate5.Text = Convert.ToString(ds.Tables[0].Rows[0][48]);
-                        txtDate5.Text = Convert.ToString(ds.Tables[0].Rows[0][49]);
+                        txtCadre1.Text = Convert.ToString(ds.Tables[0].Rows[0][37]);
+                        txtCadre2.Text = Convert.ToString(ds.Tables[0].Rows[0][38]);
+                        txtCadre3.Text = Convert.ToString(ds.Tables[0].Rows[0][39]);
+                        txtCadre4.Text = Convert.ToString(ds.Tables[0].Rows[0][40]);
+                        txtCadre5.Text = Convert.ToString(ds.Tables[0].Rows[0][41]);
+                        txtCadre6.Text = Convert.ToString(ds.Tables[0].Rows[0][42]);
+                        txtDate1.Text = Convert.ToString(ds.Tables[0].Rows[0][43]);
+                        txtDate2.Text = Convert.ToString(ds.Tables[0].Rows[0][44]);
+                        txtDate3.Text = Convert.ToString(ds.Tables[0].Rows[0][45]);
+                        txtDate4.Text = Convert.ToString(ds.Tables[0].Rows[0][46]);
+                        txtDate5.Text = Convert.ToString(ds.Tables[0].Rows[0][47]);
+                        txtDate6.Text = Convert.ToString(ds.Tables[0].Rows[0][48]);
                     }
                 }
             }
+        }
+        protected void btnApprove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_Qualification SET Status = 'Approved' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Green;
+                lblMsg.Text = "Data Approved Successfully";
+            }
+            catch { }
+        }
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_Qualification SET Status = 'Reject' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Data Rejected Successfully";
+            }
+            catch { }
+        }
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_Qualification SET IsDeleted = '"+true+"' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Data Deleted Successfully";
+                Response.Redirect("Request.aspx");
+            }
+            catch { }
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {

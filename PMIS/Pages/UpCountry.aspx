@@ -106,7 +106,7 @@
               <div class="form-group" >
                       <asp:Button ID="btnApply" runat="server" Text="Apply" class="btn btn-success" OnClick="btnApply_Click" Width="110px" />
                       <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="btn btn-danger" Width="110px" />
-                      <asp:Button ID="btnBack" runat="server" Text="Back" class="btn btn-info" Width="110px" />
+                      <asp:Button ID="btnBack" runat="server" Text="Back" class="btn btn-info" OnClick="btnBack_Click" Width="110px" />
                   </div>
               </div>
             </section>

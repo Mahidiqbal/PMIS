@@ -23,7 +23,11 @@ namespace PMIS.Pages
             }
         }
         
-        protected void btnApply_Click(object sender, EventArgs e)
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard.aspx");
+        }
+            protected void btnApply_Click(object sender, EventArgs e)
         {
             try
             {

@@ -38,7 +38,7 @@ namespace PMIS.Pages
                 "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
-                "ELSE null END as Unit from View_Active_Service";
+                "ELSE null END as Unit from View_Active_Service where Is_Deleted ='" + false + "'";
             ds = con.getData(query);
             dgv.DataSource = ds;
             dgv.DataBind();
@@ -73,7 +73,7 @@ namespace PMIS.Pages
                 "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
-                "ELSE null END as Unit from View_Active_Service ";
+                "ELSE null END as Unit from View_Active_Service where Is_Deleted ='" + false + "'";
             ds = con.getData(query);
             ds.Tables[0].DefaultView.RowFilter = "Unit Like '"+txtSearch.Text.Trim()+"%'";
             DataTable dt = (ds.Tables[0].DefaultView).ToTable();

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +18,9 @@ namespace PMIS.Pages
         {
             if (!IsPostBack)
             {
+                btnApprove.Visible = false;
+                btnReject.Visible = false;
+                btnDelete.Visible = false;
                 if (Session["Role"].ToString() == "Admin")
                 {
                     btnCreate.Visible = false;
@@ -102,7 +106,7 @@ namespace PMIS.Pages
                         txtM_inLawAlive2.Text = Convert.ToString(ds.Tables[0].Rows[0][71]);
                         txtM_inLawAlive3.Text = Convert.ToString(ds.Tables[0].Rows[0][72]);
 
-                        query = "select * from tbl_Chlidren where where Pno = '" + Session["Pno"].ToString() + "'";
+                        query = "select * from tbl_Chlidren where Pno = '" + Session["Pno"].ToString() + "'";
                         DataSet ds1 = con.getData(query);
                         txtChName.Text = Convert.ToString(ds1.Tables[0].Rows[0][1]);
                         txtChName1.Text = Convert.ToString(ds1.Tables[0].Rows[0][2]);
@@ -157,6 +161,14 @@ namespace PMIS.Pages
                         ddChMariStatus5.Text = Convert.ToString(ds1.Tables[0].Rows[0][46]);
                         ddChMariStatus6.Text = Convert.ToString(ds1.Tables[0].Rows[0][47]);
                         ddChMariStatus7.Text = Convert.ToString(ds1.Tables[0].Rows[0][48]);
+
+                        if (Session["Request"].ToString() == "1")
+                        {
+                            btnBack.Visible = false;
+                            btnApprove.Visible = true;
+                            btnReject.Visible = true;
+                            btnDelete.Visible = true;
+                        }
                     }
                 }
                 else if (Session["Role"].ToString() == "User")
@@ -302,7 +314,40 @@ namespace PMIS.Pages
                 }   
             }
         }
-        
+        protected void btnApprove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_FamilyInfo SET Status = 'Approved' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Green;
+                lblMsg.Text = "Data Approved Successfully";
+            }
+            catch { }
+        }
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+                query = "UPDATE tbl_FamilyInfo SET Status = 'Rejected' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Data Rejected Successfully";
+            }
+            catch { }
+        }
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_FamilyInfo SET Is_Deleted = '"+true+"' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Data Deleted Successfully";
+                Response.Redirect("Request.aspx");
+            }
+            catch { }
+        }
         protected void btnBack_Click(object sender, EventArgs e)
         {
             try

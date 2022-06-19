@@ -39,7 +39,7 @@ namespace PMIS.Pages
                 "ELSE null END as Unit, " +
                 "CAST(DATEDIFF(yy, User_DOB,convert(varchar, getdate(), 23) ) AS varchar(4)) +' year '+ " +
                 "CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, User_DOB, convert(varchar, getdate(), 23)), User_DOB), convert(varchar, getdate(), 23)) AS varchar(2)) + ' month ' " +
-                "AgeLimit from View_Roster order by AgeLimit desc";
+                "AgeLimit from View_Roster where Is_Deleted ='" + false + "' order by AgeLimit desc";
             ds = con.getData(query);
             dgv.DataSource = ds;
             dgv.DataBind();
@@ -63,7 +63,7 @@ namespace PMIS.Pages
                 "ELSE null END as Unit, " +
                 "CAST(DATEDIFF(yy, User_DOB,convert(varchar, getdate(), 23) ) AS varchar(4)) +' year '+ " +
                 "CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, User_DOB, convert(varchar, getdate(), 23)), User_DOB), convert(varchar, getdate(), 23)) AS varchar(2)) + ' month ' " +
-                "AgeLimit from View_Roster order by AgeLimit desc";
+                "AgeLimit from View_Roster where Is_Deleted ='" + false + "' order by AgeLimit desc";
             ds = con.getData(query);
             ds.Tables[0].DefaultView.RowFilter = "Unit Like '" + txtSearch.Text.Trim() + "%'";
             DataTable dt = (ds.Tables[0].DefaultView).ToTable();

@@ -41,7 +41,20 @@ namespace PMIS.Pages
         }
         public void loadData2()
         {
-            query = "SELECT * FROM tbl_Qualification where IsDeleted = '" + false + "'";
+            query = "select User_Pno, User_firstName ," +
+                "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
+                "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
+                "WHEN Cadre4 is not null and Cadre4 != '' THEN Cadre4 " +
+                "WHEN Cadre3 is not null and Cadre3 != '' THEN Cadre3 " +
+                "WHEN Cadre2 is not null and Cadre2 != '' THEN Cadre2 " +
+                "WHEN Cadre1 is not null and Cadre1 != '' THEN Cadre1 " +
+                "ELSE null END as Cadre, " +
+                "CASE WHEN Unit_Served5 is not null and Unit_Served5 != '' THEN Unit_Served5 " +
+                "WHEN Unit_Served4 is not null and Unit_Served4 != '' THEN Unit_Served4 " +
+                "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
+                "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
+                "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
+                "ELSE null END as Unit,Status from View_Qualification where Is_Deleted ='" + false + "' and IsDeleted='" + false + "'";
             ds = con.getData(query);
             dgvQualification.DataSource = ds;
             dgvQualification.DataBind();
@@ -92,11 +105,11 @@ namespace PMIS.Pages
             try
             {
                 int id1 = Convert.ToInt32(e.CommandArgument.ToString());
-                if (e.CommandName == "Approve")
+                if (e.CommandName == "View")
                 {
-                    query = "UPDATE tbl_FamilyInfo SET Status = 'Approved' where Fam_ID = '" + id1 + "'";
-                    con.setData(query);
-                    loadData1();
+                    Session["Pno"] = id1;
+                    Session["Request"] = 1;
+                    Response.Redirect("Family_Info.aspx");
 
                 }
                 else if (e.CommandName == "Reject")
@@ -116,16 +129,17 @@ namespace PMIS.Pages
             try
             {
                 int id1 = Convert.ToInt32(e.CommandArgument.ToString());
-                if (e.CommandName == "Approve")
+                if (e.CommandName == "View")
                 {
-                    query = "UPDATE tbl_Qualification SET Status = 'Approved' where QualificationID = '" + id1 + "'";
-                    con.setData(query);
-                    loadData2();
+                    Session["Pno"] = id1;
+                    Session["Request"] = 1;
+                    Response.Redirect("Qualification.aspx");
+                    
 
                 }
                 else if (e.CommandName == "Reject")
                 {
-                    query = "UPDATE tbl_Qualification SET Status = 'Rejected' where QualificationID = '" + id1 + "'";
+                    query = "UPDATE tbl_Qualification SET Status = 'Rejected' where Pno = '" + id1 + "'";
                     con.setData(query);
                     loadData2();
                 }

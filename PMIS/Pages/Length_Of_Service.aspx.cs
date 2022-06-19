@@ -39,7 +39,7 @@ namespace PMIS.Pages
                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
                 "ELSE null END as Unit, " +
-                "DATEDIFF(YEAR, EnrollDate, convert(varchar, getdate(), 23)) AS YEARS_SERVED from View_Length_Service order by YEARS_SERVED desc";
+                "DATEDIFF(YEAR, EnrollDate, convert(varchar, getdate(), 23)) AS YEARS_SERVED from View_Length_Service where Is_Deleted ='" + false + "' order by YEARS_SERVED desc";
             ds = con.getData(query);
             dgv.DataSource = ds;
             dgv.DataBind();
@@ -61,7 +61,7 @@ namespace PMIS.Pages
                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
                 "ELSE null END as Unit, " +
-                "DATEDIFF(YEAR, EnrollDate, convert(varchar, getdate(), 23)) AS YEARS_SERVED from View_Length_Service order by YEARS_SERVED desc";
+                "DATEDIFF(YEAR, EnrollDate, convert(varchar, getdate(), 23)) AS YEARS_SERVED from View_Length_Service where Is_Deleted ='" + false + "' order by YEARS_SERVED desc";
             ds = con.getData(query);
             ds.Tables[0].DefaultView.RowFilter = "Unit Like '" + txtSearch.Text.Trim() + "%'";
             DataTable dt = (ds.Tables[0].DefaultView).ToTable();

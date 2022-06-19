@@ -142,7 +142,7 @@
               <div class="col-md-4">
                   <label>Password</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtPass" runat="server" placeholder="" ReadOnly="True"></asp:TextBox>
+                      <asp:TextBox class="form-control" ID="txtPass" runat="server" placeholder="********" TextMode="Password"  ReadOnly="True"></asp:TextBox>
                   </div>
               </div>
               <div class="col-md-4">

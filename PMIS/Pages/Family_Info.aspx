@@ -895,6 +895,13 @@
                       <asp:Button ID="btnBack" runat="server" Text="Back" class="btn btn-info" OnClick="btnBack_Click" Width="110px" />
               </div>
               </div>
+            <div class="col-12 pull-right">
+              <div class="form-group" >
+                      <asp:Button ID="btnApprove" runat="server" Text="Approve" class="btn btn-success" OnClick="btnApprove_Click"  Width="110px" />
+                      <asp:Button ID="btnReject" runat="server" Text="Reject" class="btn btn-warning" OnClick="btnReject_Click" Width="110px" />
+                      <asp:Button ID="btnDelete" runat="server" Text="Delete" class="btn btn-danger"  OnClick="btnDelete_Click" Width="110px" />
+                  </div>
+              </div>
             </div>
       </div>
     
