@@ -16,6 +16,9 @@ namespace PMIS.Pages
         {
             if (!IsPostBack)
             {
+                btnApprove.Visible = false;
+                btnReject.Visible = false;
+                btnDelete.Visible = false;
                 if (Session["Role"].ToString() == "Admin")
                 {
                     btnEdit.Visible = false;
@@ -39,7 +42,13 @@ namespace PMIS.Pages
                         DDUnitServed5.SelectedItem.Text = Convert.ToString(ds2.Tables[0].Rows[0][13]);
                         txtFrom5.Text = Convert.ToString(ds2.Tables[0].Rows[0][14]);
                         txtTo5.Text = Convert.ToString(ds2.Tables[0].Rows[0][15]);
-
+                        if (Session["Request"].ToString() == "1")
+                        {
+                            btnBack.Visible = false;
+                            btnApprove.Visible = true;
+                            btnReject.Visible = true;
+                            btnDelete.Visible = true;
+                        }
                     }
                     else
                     {
@@ -82,12 +91,46 @@ namespace PMIS.Pages
         
         string query;
         DB_Conn con = new DB_Conn();
+        protected void btnApprove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_Transfer SET Status = 'Approved' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Green;
+                lblMsg.Text = "Data Approved Successfully";
+            }
+            catch { }
+        }
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_Transfer SET Status = 'Reject' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Data Rejected Successfully";
+            }
+            catch { }
+        }
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = "UPDATE tbl_Transfer SET Is_Deleted = '" + true + "' where Pno = '" + Session["Pno"].ToString() + "'";
+                con.setData(query);
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = "Data Deleted Successfully";
+                Response.Redirect("Request.aspx");
+            }
+            catch { }
+        }
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             try
             {
                 query = "INSERT INTO tbl_Transfer(Unit_Served1,From_Date1,To_Date1,Unit_Served2,From_Date2,To_Date2,Unit_Served3,From_Date3,To_Date3,Unit_Served4,From_Date4,To_Date4,Unit_Served5,From_Date5,To_Date5,Is_Deleted,Created_On,Created_By,Pno,User_ID,Status) " +
-                    " VALUES('" + DDUnitServed1.SelectedValue + "','" + txtFrom1.Text + "','" + txtTo2.Text + "','" + DDUnitServed2.SelectedValue + "','" + txtFrom2.Text + "','" + txtTo2.Text + "','" + DDUnitServed3.SelectedValue + "','" + txtFrom3.Text + "','" + txtTo3.Text + "','" + DDUnitServed4.SelectedValue + "','" + txtFrom4.Text + "','" + txtTo4.Text + "','" + DDUnitServed5.SelectedValue + "','" + txtFrom5.Text + "','" + txtTo5.Text + "','"+false+ "',getdate(),'" + Session["ID"].ToString() + "','" +Session["User_Pno"].ToString() + "','" + Session["ID"].ToString() + "','Pending')";
+                    " VALUES('" + DDUnitServed1.SelectedValue + "','" + txtFrom1.Text + "','" + txtTo2.Text + "','" + DDUnitServed2.SelectedValue + "','" + txtFrom2.Text + "','" + txtTo2.Text + "','" + DDUnitServed3.SelectedValue + "','" + txtFrom3.Text + "','" + txtTo3.Text + "','" + DDUnitServed4.SelectedValue + "','" + txtFrom4.Text + "','" + txtTo4.Text + "','" + DDUnitServed5.SelectedValue + "','" + txtFrom5.Text + "','" + txtTo5.Text + "','"+false+ "',getdate(),'" + Session["Name"].ToString() + "','" +Session["User_Pno"].ToString() + "','" + Session["ID"].ToString() + "','Pending')";
                 con.setData(query);
                 lblMsg.ForeColor = Color.Green;
                 lblMsg.Text = "Data Submit Successfully";

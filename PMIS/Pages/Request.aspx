@@ -306,15 +306,7 @@
                                         <EditItemTemplate>
                                             <asp:TextBox ID="txtMo_Name" Text='<%# Eval("Cadre") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
-                                    </asp:TemplateField>                          
-                                    <asp:TemplateField HeaderText="Present Unit">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("Unit") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtMo_e" Text='<%# Eval("Unit") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>  
+                                    </asp:TemplateField>    
                                     <asp:TemplateField HeaderText="Status" InsertVisible="False">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Status") %>' runat="server"></asp:Label>
@@ -341,7 +333,7 @@
                     <div class="col-lg-12">
                         <div style="overflow-x: auto; width: 100%">
                             <asp:GridView ID="dgvTransfer" runat="server"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="TransferID" OnRowCommand="dgv_RowCommand4" OnRowDeleting="dgv_RowDeleting4" HorizontalAlign="Center">
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Pno" OnRowCommand="dgv_RowCommand4" OnRowDeleting="dgv_RowDeleting4" HorizontalAlign="Center">
                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                 <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#006699" Font-Bold="True" />
                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -352,14 +344,7 @@
                                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                 <SortedDescendingHeaderStyle BackColor="#00547E" />
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Sanction ID" Visible="false">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("TransferID") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtID" Text='<%# Eval("TransferID") %>' runat="server" ReadOnly="true"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
+                                   
                                     <asp:TemplateField HeaderText="P.No" >
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Pno") %>' runat="server"></asp:Label>
@@ -369,129 +354,52 @@
                                         </EditItemTemplate>
                                     </asp:TemplateField>
                                    
-                                    <asp:TemplateField HeaderText="Unit Served">
+                                    <asp:TemplateField HeaderText="Name">
+                                        <ItemTemplate>
+                                            <asp:Label Text='<%# Eval("Created_By") %>' runat="server"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="txtServed1" Text='<%# Eval("Created_By") %>' runat="server"></asp:TextBox>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Unit Served1">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Unit_Served1") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtServed1" Text='<%# Eval("Unit_Served1") %>' runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtFrom_Date1" Text='<%# Eval("Unit_Served1") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="From Date">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("From_Date1") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtFrom_Date1" Text='<%# Eval("From_Date1") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="To Date" InsertVisible="False">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("To_Date1") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtTo_Date1" Text='<%# Eval("To_Date1") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Unit Served">
+                                    <asp:TemplateField HeaderText="Unit Served2">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Unit_Served2") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtServed2" Text='<%# Eval("Unit_Served2") %>' runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtFrom_Date1" Text='<%# Eval("Unit_Served2") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="From Date">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("From_Date2") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtFrom_Date2" Text='<%# Eval("From_Date2") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="To Date" InsertVisible="False">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("To_Date2") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtTo_Date2" Text='<%# Eval("To_Date2") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Unit Served">
+                                    <asp:TemplateField HeaderText="Unit Served3">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Unit_Served3") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtServed3" Text='<%# Eval("Unit_Served3") %>' runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtFrom_Date1" Text='<%# Eval("Unit_Served3") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="From Date">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("From_Date3") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtFrom_Date3" Text='<%# Eval("From_Date3") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="To Date" InsertVisible="False">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("To_Date3") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtTo_Date3" Text='<%# Eval("To_Date3") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Unit Served">
+                                    <asp:TemplateField HeaderText="Unit  Served4">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Unit_Served4") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtServed4" Text='<%# Eval("Unit_Served4") %>' runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtFrom_Date1" Text='<%# Eval("Unit_Served4") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="From Date">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("From_Date4") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtFrom_Date4" Text='<%# Eval("From_Date4") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="To Date" InsertVisible="False">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("To_Date4") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtTo_Date4" Text='<%# Eval("To_Date4") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Unit Served">
+                                    <asp:TemplateField HeaderText="Unit Served5">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Unit_Served5") %>' runat="server"></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtServed5" Text='<%# Eval("Unit_Served5") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="From Date">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("From_Date5") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtFrom_Date5" Text='<%# Eval("From_Date5") %>' runat="server"></asp:TextBox>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="To Date" InsertVisible="False">
-                                        <ItemTemplate>
-                                            <asp:Label Text='<%# Eval("To_Date5") %>' runat="server"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtTo_Date5" Text='<%# Eval("To_Date5") %>' runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtFrom_Date1" Text='<%# Eval("Unit_Served5") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Status" InsertVisible="False">
@@ -502,11 +410,9 @@
                                             <asp:TextBox ID="txtStatus" Text='<%# Eval("Status") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Request">
+                                    <asp:TemplateField HeaderText="View Data" ControlStyle-Width="100%">
                                         <ItemTemplate>
-                                            <asp:Button runat="server" CommandName="Approve" ToolTip="Approve" CommandArgument='<%# Eval("TransferID") %>' ForeColor="White" CssClass="btn btn-info" Text="Approve" />
-                                            <asp:Button runat="server" CommandName="Reject" ToolTip="Reject" CommandArgument='<%# Eval("TransferID") %>' ForeColor="White" CssClass="btn btn-warning" Text="Reject" />
-                                            <asp:Button runat="server" CommandName="Delete" ToolTip="Delete" ForeColor="White" CssClass="btn btn-danger" Text="Delete" CommandArgument='<%# Eval("TransferID") %>' />
+                                            <asp:Button runat="server" CommandName="View" ToolTip="View" CommandArgument='<%# Eval("Pno") %>' ForeColor="White" CssClass="btn btn-info" Text="View" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

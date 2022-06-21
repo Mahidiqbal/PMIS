@@ -41,34 +41,28 @@ namespace PMIS.Pages
         }
         public void loadData2()
         {
-            query = "select User_Pno, User_firstName ," +
+            query = "select User_Pno, User_firstName ,Status," +
                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
                 "WHEN Cadre4 is not null and Cadre4 != '' THEN Cadre4 " +
                 "WHEN Cadre3 is not null and Cadre3 != '' THEN Cadre3 " +
                 "WHEN Cadre2 is not null and Cadre2 != '' THEN Cadre2 " +
                 "WHEN Cadre1 is not null and Cadre1 != '' THEN Cadre1 " +
-                "ELSE null END as Cadre, " +
-                "CASE WHEN Unit_Served5 is not null and Unit_Served5 != '' THEN Unit_Served5 " +
-                "WHEN Unit_Served4 is not null and Unit_Served4 != '' THEN Unit_Served4 " +
-                "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
-                "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
-                "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
-                "ELSE null END as Unit,Status from View_Qualification where Is_Deleted ='" + false + "' and IsDeleted='" + false + "'";
+                "ELSE null END as Cadre from View_Qualification where Is_Deleted ='" + false + "' AND IsDeleted='" + false + "' order by Status desc";
             ds = con.getData(query);
             dgvQualification.DataSource = ds;
             dgvQualification.DataBind();
         }
         public void loadData3()
         {
-            query = "SELECT * FROM tbl_Sanction where Is_Deleted = '" + false + "'";
+            query = "SELECT * from tbl_Sanction where Is_Deleted ='"+false+"'";
             ds = con.getData(query);
             dgvSanction.DataSource = ds;
             dgvSanction.DataBind();
         }
         public void loadData4()
         {
-            query = "SELECT * FROM tbl_Transfer where Is_Deleted = '" + false + "'";
+            query = "SELECT * FROM View_Transfer where Is_Deleted = '" + false + "' and Expr2= '" + false + "' order by Status desc";
             ds = con.getData(query);
             dgvTransfer.DataSource = ds;
             dgvTransfer.DataBind();
@@ -181,11 +175,11 @@ namespace PMIS.Pages
             try
             {
                 int id1 = Convert.ToInt32(e.CommandArgument.ToString());
-                if (e.CommandName == "Approve")
+                if (e.CommandName == "View")
                 {
-                    query = "UPDATE tbl_Transfer SET Status = 'Approved' where TransferID = '" + id1 + "'";
-                    con.setData(query);
-                    loadData4();
+                    Session["Pno"] = id1;
+                    Session["Request"] = 1;
+                    Response.Redirect("Transfer_Record.aspx");
 
                 }
                 else if (e.CommandName == "Reject")

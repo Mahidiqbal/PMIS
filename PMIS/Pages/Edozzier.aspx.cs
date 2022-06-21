@@ -49,6 +49,7 @@ namespace PMIS.Pages
                 {
                     lblMessage.Text = "";
                     Session["Pno"] = PnoSearch.Text.ToString();
+                    Session["Request"] = 0;
                     btnPerInfo.Visible = true;
                     btnFamInfo.Visible = true;
                     btnTraining.Visible = true;
