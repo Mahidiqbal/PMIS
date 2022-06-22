@@ -308,7 +308,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -328,7 +328,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -352,7 +352,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender1" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -372,7 +372,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus1" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -396,7 +396,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender2" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -416,7 +416,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus2" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -440,7 +440,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender3" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -460,7 +460,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus3" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -484,7 +484,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender4" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -504,7 +504,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus4" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -528,7 +528,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender5" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -548,7 +548,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus5" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -572,7 +572,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender6" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -592,7 +592,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus6" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />
@@ -616,7 +616,7 @@
               <div class="col-md-2">
                   <label>Gender</label>
                   <asp:DropDownList ID="ddChGender7" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Male" Value="Single" />
                       <asp:ListItem Text="Female" Value="Married" />
                       </asp:DropDownList>
@@ -636,7 +636,7 @@
               <div class="col-md-2">
                   <label>Marital Status</label>
                   <asp:DropDownList ID="ddChMariStatus7" class="form-control" runat="server">
-                      <asp:ListItem Text="Select" Value="Select" Selected="True" />
+                      <asp:ListItem Text="Select" Value="" Selected="True" />
                       <asp:ListItem Text="Single" Value="Single" />
                       <asp:ListItem Text="Married" Value="Married" />
                       <asp:ListItem Text="Widowed" Value="Widowed" />

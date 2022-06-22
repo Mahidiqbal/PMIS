@@ -47,7 +47,7 @@
               <div class="col-md-3">
                   <label>Institute</label>
                   <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtInstitute1" runat="server" placeholder="" ></asp:TextBox>
+                      <asp:TextBox class="form-control"  ID="txtInstitute1" runat="server" ></asp:TextBox>
                   </div>
               </div>
               <div class="col-md-3">

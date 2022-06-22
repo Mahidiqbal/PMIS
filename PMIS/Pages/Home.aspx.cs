@@ -38,14 +38,14 @@ namespace PMIS
                 id = Convert.ToInt32(e.CommandArgument.ToString());
                 if (e.CommandName == "Approve")
                 {
-                    query = "UPDATE tbl_User SET User_Status = 'Approved' where User_ID = '" + id + "'";
+                    query = "UPDATE tbl_User SET User_Status = 'Approved', Status='Approved' where User_ID = '" + id + "'";
                     con.setData(query);
                     loadData();
 
                 }
                 else if (e.CommandName == "Reject")
                 {
-                    query = "UPDATE tbl_User SET User_Status = 'Rejected' where User_ID = '" + id + "'";
+                    query = "UPDATE tbl_User SET User_Status = 'Rejected' , Status='Rejected' where User_ID = '" + id + "'";
                     con.setData(query);
                     loadData();
                 }

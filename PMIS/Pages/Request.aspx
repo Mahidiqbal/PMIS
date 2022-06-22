@@ -244,7 +244,7 @@
                                             <asp:TextBox ID="Nok_Contact" Text='<%# Eval("Nok_Contact") %>' runat="server"></asp:TextBox>
                                         </EditItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Status" InsertVisible="False">
+                                    <asp:TemplateField HeaderText="Status">
                                         <ItemTemplate>
                                             <asp:Label Text='<%# Eval("Status") %>' runat="server"></asp:Label>
                                         </ItemTemplate>

@@ -52,11 +52,23 @@ namespace PMIS.Pages
         {
             try
             {
-                query = "INSERT INTO tbl_Request (Pno,Name,Gender,Age,CNIC,Cadre,Unit,Reason,Date,Dash1,Dash2,Dash3,User_ID,Status,Is_Deleted,Created_On,Created_By) " +
-                    "VALUES ('" + txtPno.Text + "','" + txtName.Text + "','" + ddGender.SelectedValue + "','" + txtAge.Text + "','" + txtCNIC.Text + "','" + ddAdminCadre.SelectedValue + "','" + DDUnitServed1.Text + "','" + txtReason.Text + "',convert(varchar, getdate(), 23),'" + txtDash1.Text + "','" + txtDash2.Text + "','" + txtDash3.Text + "','" + Session["ID"] + "','Pending','" + false+"',getdate(),'" + Session["Name"].ToString() + "')";
-                con.setData(query);
-                lblMsg.ForeColor = Color.Green;
-                lblMsg.Text = "Data Successfully Submit";
+                query = "select * from tbl_Request where User_ID = '" + Session["ID"].ToString() + "' and Is_Deleted='"+false+"'";
+                DataSet ds3 = con.getData(query);
+                if (ds3.Tables[0].Rows.Count > 0)
+                {
+                   string query2 = "Update tbl_Request Set Name='" + txtName.Text + "',Gender='" + ddGender.SelectedItem.Text + "',Age='" + txtAge.Text + "',CNIC='" + txtCNIC.Text + "',Cadre='" + ddAdminCadre.SelectedItem.Text + "',Unit='" + DDUnitServed1.SelectedItem.Text + "',Reason='" + txtReason.Text + "',Date=convert(varchar, getdate(), 23),Dash1='" + txtDash1.Text + "',Dash2='" + txtDash2.Text + "',Dash3='" + txtDash3.Text + "',Status='Pending',Is_Deleted='" + false + "' where Pno='" + Session["User_Pno"] + "'";
+                    con.setData(query2);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Data Successfully Submit";
+                }
+                else
+                {
+                    query = "INSERT INTO tbl_Request (Pno,Name,Gender,Age,CNIC,Cadre,Unit,Reason,Date,Dash1,Dash2,Dash3,User_ID,Status,Is_Deleted,Created_On,Created_By) " +
+                    "VALUES ('" + txtPno.Text + "','" + txtName.Text + "','" + ddGender.SelectedValue + "','" + txtAge.Text + "','" + txtCNIC.Text + "','" + ddAdminCadre.SelectedValue + "','" + DDUnitServed1.Text + "','" + txtReason.Text + "',convert(varchar, getdate(), 23),'" + txtDash1.Text + "','" + txtDash2.Text + "','" + txtDash3.Text + "','" + Session["ID"] + "','Pending','" + false + "',getdate(),'" + Session["Name"].ToString() + "')";
+                    con.setData(query);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Data Successfully Submit";
+                }
             }
             catch (Exception ex ){
                 lblMsg.ForeColor = Color.Red;

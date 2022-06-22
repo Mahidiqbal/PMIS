@@ -19,6 +19,12 @@ namespace PMIS.Pages
         {
             if (!IsPostBack)
             {
+                query = "Select * from tbl_Sanction where User_ID='" + Session["ID"] + "' and Is_Deleted = '" + false + "'";
+                ds = con.getData(query);
+                if(ds.Tables[0].Rows.Count>0)
+                {
+                    btnSubmit.Text = "Update";
+                }
                 if (Session["Role"].ToString() == "User")
                 {
                     admin.Visible = false;
@@ -105,14 +111,28 @@ namespace PMIS.Pages
         {
             try
             {
-                query = "insert into tbl_Sanction (Working_Sanction, latest_cadre, User_ID,Is_Deleted, Status,Pno) Values('" + DDWorkingSanc.SelectedValue + "','"+DDCadre.SelectedValue+ "', '"+Session["ID"]+ "', '" + false + "', 'Pending','" + Session["User_Pno"] + "')";
-                con.setData(query);
-                lblMsg.ForeColor = Color.Green;
-                lblMsg.Text = "Data Added Wait for Approval.";
+                if (btnSubmit.Text == "Submit")
+                {
+                    query = "insert into tbl_Sanction (Working_Sanction, latest_cadre, User_ID,Is_Deleted, Status,Pno) Values('" + DDWorkingSanc.SelectedValue + "','" + DDCadre.SelectedValue + "', '" + Session["ID"] + "', '" + false + "', 'Pending','" + Session["User_Pno"] + "')";
+                    con.setData(query);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Data Added Wait for Approval.";
 
-                Page_Load(this,null);
+                    Page_Load(this, null);
+                }
+                else if(btnSubmit.Text=="Update")
+                {
+                    query = "UPDATE tbl_Sanction SET Working_Sanction='" + DDWorkingSanc.SelectedValue + "', latest_cadre='" + DDCadre.SelectedValue + "', Is_Deleted='" + false + "', Status='Pending' where User_ID='" + Session["ID"] + "'";
+                    con.setData(query);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Data Updated Wait for Approval.";
+                }
             }
-            catch { }
+            catch(Exception ex) 
+            {
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = ex.Message;
+            }
         }
 
     }

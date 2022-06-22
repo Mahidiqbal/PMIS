@@ -16,6 +16,12 @@ namespace PMIS.Pages
         {
             if (!IsPostBack)
             {
+                query = "select * from tbl_Transfer where User_ID = '" + Session["ID"] + "' and Is_Deleted='" + false + "'";
+                DataSet ds3 = con.getData(query);
+                if(ds3.Tables[0].Rows.Count>0)
+                {
+                    btnEdit.Text = "Update";
+                }
                 btnApprove.Visible = false;
                 btnReject.Visible = false;
                 btnDelete.Visible = false;
@@ -23,7 +29,7 @@ namespace PMIS.Pages
                 {
                     btnEdit.Visible = false;
                     btnCancel.Visible = false;
-                    query = "select * from tbl_Transfer where Pno = '" + Session["Pno"].ToString() + "'";
+                    query = "select * from tbl_Transfer where Pno = '" + Session["Pno"].ToString() + "' and Is_Deleted = '"+false+"'";
                     DataSet ds2 = con.getData(query);
                     if (ds2.Tables[0].Rows.Count > 0)
                     {
@@ -58,7 +64,7 @@ namespace PMIS.Pages
                 }
                 else if (Session["Role"].ToString() == "User")
                 {
-                    query = "select * from tbl_Transfer where User_ID = '" + Session["ID"].ToString() + "' and Status='Approved'";
+                    query = "select * from tbl_Transfer where User_ID = '" + Session["ID"].ToString() + "' and Status='Approved' and Is_Deleted ='" + false + "'";
                     DataSet ds = con.getData(query);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
@@ -129,16 +135,21 @@ namespace PMIS.Pages
         {
             try
             {
-                query = "INSERT INTO tbl_Transfer(Unit_Served1,From_Date1,To_Date1,Unit_Served2,From_Date2,To_Date2,Unit_Served3,From_Date3,To_Date3,Unit_Served4,From_Date4,To_Date4,Unit_Served5,From_Date5,To_Date5,Is_Deleted,Created_On,Created_By,Pno,User_ID,Status) " +
-                    " VALUES('" + DDUnitServed1.SelectedValue + "','" + txtFrom1.Text + "','" + txtTo2.Text + "','" + DDUnitServed2.SelectedValue + "','" + txtFrom2.Text + "','" + txtTo2.Text + "','" + DDUnitServed3.SelectedValue + "','" + txtFrom3.Text + "','" + txtTo3.Text + "','" + DDUnitServed4.SelectedValue + "','" + txtFrom4.Text + "','" + txtTo4.Text + "','" + DDUnitServed5.SelectedValue + "','" + txtFrom5.Text + "','" + txtTo5.Text + "','"+false+ "',getdate(),'" + Session["Name"].ToString() + "','" +Session["User_Pno"].ToString() + "','" + Session["ID"].ToString() + "','Pending')";
-                con.setData(query);
-                lblMsg.ForeColor = Color.Green;
-                lblMsg.Text = "Data Submit Successfully";
-
-                //for(int i=1; i<=6; i++)
-                //{
-
-                //}
+                if (btnEdit.Text == "Submit")
+                {
+                    query = "INSERT INTO tbl_Transfer(Unit_Served1,From_Date1,To_Date1,Unit_Served2,From_Date2,To_Date2,Unit_Served3,From_Date3,To_Date3,Unit_Served4,From_Date4,To_Date4,Unit_Served5,From_Date5,To_Date5,Is_Deleted,Created_On,Created_By,Pno,User_ID,Status) " +
+                        " VALUES('" + DDUnitServed1.SelectedValue + "','" + txtFrom1.Text + "','" + txtTo1.Text + "','" + DDUnitServed2.SelectedValue + "','" + txtFrom2.Text + "','" + txtTo2.Text + "','" + DDUnitServed3.SelectedValue + "','" + txtFrom3.Text + "','" + txtTo3.Text + "','" + DDUnitServed4.SelectedValue + "','" + txtFrom4.Text + "','" + txtTo4.Text + "','" + DDUnitServed5.SelectedValue + "','" + txtFrom5.Text + "','" + txtTo5.Text + "','" + false + "',getdate(),'" + Session["Name"].ToString() + "','" + Session["User_Pno"].ToString() + "','" + Session["ID"].ToString() + "','Pending')";
+                    con.setData(query);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Data Submit Successfully";
+                }
+                else if(btnEdit.Text=="Update")
+                {
+                    string query1 = "UPDATE tbl_Transfer SET Unit_Served1='" + DDUnitServed1.SelectedItem.Text + "',From_Date1='" + txtFrom1.Text + "',To_Date1='" + txtTo1.Text + "',Unit_Served2='" + DDUnitServed2.SelectedItem.Text + "',From_Date2='" + txtFrom2.Text + "',To_Date2='" + txtTo2.Text + "',Unit_Served3='" + DDUnitServed3.SelectedItem.Text + "',From_Date3='" + txtFrom3.Text + "',To_Date3='" + txtTo3.Text + "',Unit_Served4='" + DDUnitServed4.SelectedItem.Text + "',From_Date4='" + txtFrom4.Text + "',To_Date4='" + txtTo4.Text + "',Unit_Served5='" + DDUnitServed5.SelectedItem.Text + "',From_Date5='" + txtFrom5.Text + "',To_Date5='" + txtTo5.Text + "',Is_Deleted='" + false + "',Status='Pending' where Pno = '" + Session["User_Pno"].ToString() + "'";
+                    con.setData(query1);
+                    lblMsg.ForeColor = Color.Green;
+                    lblMsg.Text = "Data Updated Successfully";
+                }
 
             }
             catch(Exception ex)

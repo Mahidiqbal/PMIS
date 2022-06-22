@@ -55,7 +55,7 @@ namespace PMIS.Pages
         }
         public void loadData3()
         {
-            query = "SELECT * from tbl_Sanction where Is_Deleted ='"+false+"'";
+            query = "SELECT * from tbl_Sanction where Is_Deleted ='"+false+"' order by Status desc";
             ds = con.getData(query);
             dgvSanction.DataSource = ds;
             dgvSanction.DataBind();
