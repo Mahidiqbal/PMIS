@@ -42,13 +42,35 @@
     <h2><%: Title %>.</h2>
         <hr />
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-              <div class="col-md-4">
-                  <div class="form-group">
-                      <asp:TextBox class="form-control" ID="txtSearch" runat="server" placeholder="Search Present Station"  OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
-                  </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <asp:DropDownList ID="ddAdminCadre" class="form-control" runat="server">
+                      <asp:ListItem Text="Select Cadre" Value="" Selected="True" />
+                      <asp:ListItem Text="LDC" Value="LDC" />
+                      <asp:ListItem Text="UDC" Value="UDC" />
+                      <asp:ListItem Text="Head Clerk" Value="Head Clerk" />
+                      <asp:ListItem Text="Junior Superident" Value="Junior Superident" />
+                      <asp:ListItem Text="Senior Superident" Value="Senior Superident" />
+                  </asp:DropDownList>
+            </div>
+            <div class="col-md-1"></div>
+              <div class="col-md-3">
+                  <asp:DropDownList ID="ddAdminUnit" class="form-control" runat="server">
+                      <asp:ListItem Text="Select Unit" Value="" Selected="True" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
+                  </asp:DropDownList>
+                 
               </div>
+            <div class="col-md-1"></div>
+              <div class="col-md-3">
+                   <div class="form-group" >
+                      <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-success" OnClick="btnSearch_Click" Width="110px" />
+                  </div>
+                  </div>
             </div>
         <div id="panel4" style="height: 500px; background-color: White; padding: 10px; overflow: auto">  
     <asp:updatepanel id="UpdatePanel3" runat="server" updatemode="Conditional">  

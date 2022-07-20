@@ -24,6 +24,7 @@ namespace PMIS.Pages
 
         public void loadData()
         {
+            dgv.Visible = false;
             query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_CNIC,User_Gender," +
                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
@@ -50,30 +51,31 @@ namespace PMIS.Pages
 
         }
 
-        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_CNIC,User_Gender, " +
-                "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
-                "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
-                "WHEN Cadre4 is not null and Cadre4 != '' THEN Cadre4 " +
-                "WHEN Cadre3 is not null and Cadre3 != '' THEN Cadre3 " +
-                "WHEN Cadre2 is not null and Cadre2 != '' THEN Cadre2 " +
-                "WHEN Cadre1 is not null and Cadre1 != '' THEN Cadre1 " +
-                "ELSE null END as Cadre, " +
-                "CASE WHEN Unit_Served5 is not null and Unit_Served5 != '' THEN Unit_Served5 " +
-                "WHEN Unit_Served4 is not null and Unit_Served4 != '' THEN Unit_Served4 " +
-                "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
-                "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
-                "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
-                "ELSE null END as Unit, " +
-                "CASE WHEN From_Date5 is not null and From_Date5 != '' THEN CAST(DATEDIFF(yy, From_Date5,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date5, convert(varchar, getdate(), 23)), From_Date5), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
-                "WHEN From_Date4 is not null and From_Date4 != '' THEN CAST(DATEDIFF(yy, From_Date4,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date4, convert(varchar, getdate(), 23)), From_Date4), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
-                "WHEN From_Date3 is not null and From_Date3 != ''  THEN CAST(DATEDIFF(yy, From_Date3,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date3, convert(varchar, getdate(), 23)), From_Date3), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
-                "WHEN From_Date2 is not null and From_Date2 != '' THEN CAST(DATEDIFF(yy, From_Date2,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date2, convert(varchar, getdate(), 23)), From_Date2), convert(varchar, getdate(), 23)) AS varchar(4) + ' Month ' " +
-                "WHEN From_Date1 is not null and From_Date1 != '' THEN CAST(DATEDIFF(yy, From_Date1,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date1, convert(varchar, getdate(), 23)), From_Date1), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
-                "ELSE null END as Sta_Date from View_Roster where Is_Deleted ='" + false + "' order by Sta_Date desc";
+            dgv.Visible = true;
+            query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_CNIC,User_Gender," +
+                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
+                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
+                 "WHEN Cadre4 is not null and Cadre4 != '' THEN Cadre4 " +
+                 "WHEN Cadre3 is not null and Cadre3 != '' THEN Cadre3 " +
+                 "WHEN Cadre2 is not null and Cadre2 != '' THEN Cadre2 " +
+                 "WHEN Cadre1 is not null and Cadre1 != '' THEN Cadre1 " +
+                 "ELSE null END as Cadre, " +
+                 "CASE WHEN Unit_Served5 is not null and Unit_Served5 != '' THEN Unit_Served5 " +
+                 "WHEN Unit_Served4 is not null and Unit_Served4 != '' THEN Unit_Served4 " +
+                 "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
+                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
+                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
+                 "ELSE null END as Unit, " +
+                 "CASE WHEN From_Date5 is not null and From_Date5 != '' THEN CAST(DATEDIFF(yy, From_Date5,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date5, convert(varchar, getdate(), 23)), From_Date5), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
+                 "WHEN From_Date4 is not null and From_Date4 != '' THEN CAST(DATEDIFF(yy, From_Date4,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date4, convert(varchar, getdate(), 23)), From_Date4), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
+                 "WHEN From_Date3 is not null and From_Date3 != ''  THEN CAST(DATEDIFF(yy, From_Date3,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date3, convert(varchar, getdate(), 23)), From_Date3), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
+                 "WHEN From_Date2 is not null and From_Date2 != '' THEN CAST(DATEDIFF(yy, From_Date2,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date2, convert(varchar, getdate(), 23)), From_Date2), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
+                 "WHEN From_Date1 is not null and From_Date1 != '' THEN CAST(DATEDIFF(yy, From_Date1,convert(varchar, getdate(), 23) ) AS varchar(4)) +' Year '+CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, From_Date1, convert(varchar, getdate(), 23)), From_Date1), convert(varchar, getdate(), 23)) AS varchar(4)) + ' Month ' " +
+                 "ELSE null END as Sta_Date from View_Roster where Is_Deleted ='" + false + "' order by Sta_Date desc ";
             ds = con.getData(query);
-            ds.Tables[0].DefaultView.RowFilter = "Unit Like '" + txtSearch.Text.Trim() + "%'";
+            ds.Tables[0].DefaultView.RowFilter = "User_Pno = '" + txtPno.Text.Trim() + "' or Cadre = '" + ddAdminCadre.SelectedValue + "' ";
             DataTable dt = (ds.Tables[0].DefaultView).ToTable();
             dgv.DataSource = dt;
             dgv.DataBind();

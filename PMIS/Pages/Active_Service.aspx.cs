@@ -24,7 +24,7 @@ namespace PMIS.Pages
 
         public void loadData()
         {
-
+            dgv.Visible = false;
             query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_Phone, " +
                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
@@ -38,7 +38,7 @@ namespace PMIS.Pages
                 "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
-                "ELSE null END as Unit from View_Active_Service where Is_Deleted ='" + false + "'";
+                "ELSE null END as Unit from View_Active_Service where Is_Deleted ='" + false + "' " ;
             ds = con.getData(query);
             dgv.DataSource = ds;
             dgv.DataBind();
@@ -58,9 +58,10 @@ namespace PMIS.Pages
             loadData();
         }
 
-        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_Phone, " +
+            dgv.Visible = true;
+            query = "select xx.* from (select User_Pno, User_firstName +' '+User_lastName as Name,User_Phone, " +
                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
                 "WHEN Cadre4 is not null and Cadre4 != '' THEN Cadre4 " +
@@ -73,9 +74,14 @@ namespace PMIS.Pages
                 "WHEN Unit_Served3 is not null and Unit_Served3 != ''  THEN Unit_Served3 " +
                 "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                 "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
-                "ELSE null END as Unit from View_Active_Service where Is_Deleted ='" + false + "'";
+                "ELSE null END as Unit from View_Active_Service where Is_Deleted ='" + false + "' ) xx " +
+                "ORDER BY CASE WHEN xx.Cadre = 'Senior Superident' THEN 1 " +
+                "WHEN xx.Cadre = 'Junior Superident' THEN 2 " +
+                "WHEN xx.Cadre = 'Head Clerk' THEN 3 " +
+                "WHEN xx.Cadre = 'UDC' THEN 4 " +
+                "ELSE 5 END";
             ds = con.getData(query);
-            ds.Tables[0].DefaultView.RowFilter = "Unit Like '"+txtSearch.Text.Trim()+"%'";
+            ds.Tables[0].DefaultView.RowFilter = "Unit = '"+ddAdminUnit.SelectedValue+ "' or Cadre = '" + ddAdminCadre.SelectedValue + "'";
             DataTable dt = (ds.Tables[0].DefaultView).ToTable();
             dgv.DataSource = dt;
             dgv.DataBind();

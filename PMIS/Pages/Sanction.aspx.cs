@@ -69,9 +69,11 @@ namespace PMIS.Pages
                      "WHEN Unit_Served2 is not null and Unit_Served2 != '' THEN Unit_Served2 " +
                      "WHEN Unit_Served1 is not null and Unit_Served1 != '' THEN Unit_Served1 " +
                      "ELSE null END as Unit " +
-                     "FROM View_Sanction where Is_Deleted ='" + false + "' AND ( Working_Sanction = '" + ddAdminSanc.SelectedValue + "' or latest_cadre ='" + ddAdminCadre.SelectedValue + "') ";
+                     "FROM View_Sanction where Is_Deleted ='" + false + "'";
                 ds = con.getData(query);
-                dgv.DataSource = ds;
+                ds.Tables[0].DefaultView.RowFilter = "Unit = '" + ddAdminSanc.SelectedValue + "' or latest_cadre ='" + ddAdminCadre.SelectedValue + "'";
+                dt = (ds.Tables[0].DefaultView).ToTable();
+                dgv.DataSource = dt;
                 dgv.DataBind();
 
                 ds.Tables[0].DefaultView.RowFilter = "Unit = 'PNS BAHADUR'";

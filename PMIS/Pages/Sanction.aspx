@@ -77,7 +77,7 @@
        <section id="admin" runat="server">
            <div class="row">
               
-             <div class="col-md-6">
+             <div class="col-md-4">
                   <label>Latest Cadre</label>
                   <asp:DropDownList ID="ddAdminCadre" class="form-control" runat="server">
                       <asp:ListItem Text="Select" Value="" Selected="True" />
@@ -88,24 +88,25 @@
                       <asp:ListItem Text="Senior Superident" Value="Senior Superident" />
                   </asp:DropDownList>
               </div>
-              <div class="col-md-6">
-                  <label>Working Sanction</label>
+              <div class="col-md-4">
+                  <label>Present Unit</label>
                   <asp:DropDownList ID="ddAdminSanc" class="form-control" runat="server">
                       <asp:ListItem Text="Select" Value="" Selected="True" />
-                      <asp:ListItem Text="Government Sanction" Value="Government Sanction" />
-                      <asp:ListItem Text="Working Sanction" Value="Working Sanction" />
-                      <asp:ListItem Text="CNS Sanction" Value="CNS Sanction" />
+                      <asp:ListItem Text="PNS RAHBAR" Value="PNS RAHBAR" />
+                      <asp:ListItem Text="PNS JAUHAR" Value="PNS JAUHAR" />
+                      <asp:ListItem Text="PNS BAHADUR" Value="PNS BAHADUR" />
+                      <asp:ListItem Text="PNCA" Value="PNCA" />
+                      <asp:ListItem Text="PNSL" Value="PNSL" />
                   </asp:DropDownList>
               </div>
-               </div>
+               
            <br />
-           <div class="row">
                <div class="col-md-2">
                   <div class="form-group" >
                       <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-success" OnClick="btnSearch_Click" Width="110px" />
                   </div>
-                   </div>
            </div>
+               </div>
            <br />
           
            <div id="panel" style="height: 500px; background-color: White; padding: 10px; overflow: auto"> 

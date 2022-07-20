@@ -23,6 +23,7 @@ namespace PMIS.Pages
         }
         public void loadData()
         {
+            dgv.Visible = false;
             query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_DOB,EnrollDate," +
                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
@@ -45,8 +46,9 @@ namespace PMIS.Pages
             dgv.DataBind();
         }
 
-        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
+            dgv.Visible = true;
             query = "select User_Pno, User_firstName +' '+User_lastName as Name,User_DOB,EnrollDate," +
                 "CASE WHEN Cadre6 is not null and Cadre6 != '' THEN Cadre6 " +
                 "WHEN Cadre5 is not null and Cadre5 != '' THEN Cadre5 " +
@@ -65,7 +67,7 @@ namespace PMIS.Pages
                 "CAST(DATEDIFF(mm, DATEADD(yy, DATEDIFF(yy, User_DOB, convert(varchar, getdate(), 23)), User_DOB), convert(varchar, getdate(), 23)) AS varchar(2)) + ' month ' " +
                 "AgeLimit from View_Roster where Is_Deleted ='" + false + "' order by AgeLimit desc";
             ds = con.getData(query);
-            ds.Tables[0].DefaultView.RowFilter = "Unit Like '" + txtSearch.Text.Trim() + "%'";
+            ds.Tables[0].DefaultView.RowFilter = "User_Pno = '" + txtPno.Text.Trim() + "' or Cadre = '" + ddAdminCadre.SelectedValue + "' ";
             DataTable dt = (ds.Tables[0].DefaultView).ToTable();
             dgv.DataSource = dt;
             dgv.DataBind();
